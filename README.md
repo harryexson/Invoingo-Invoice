@@ -35,3 +35,13 @@ For an issued, unpaid invoice, select **Mobile / Tap Pay** and attach the matchi
 This is a hosted-payment-link integration, not an automatic Stripe API integration. It does not create or validate Stripe invoices, synchronize balances, receive webhooks, or move money itself. Verify settlement in Stripe before recording payment here. After manual payments, corrections, or voiding, update the linked Stripe invoice too; removing a link locally does not revoke it. Duplicating an invoice clears the original payment link. Public NFC Tap to Pay acceptance is a different in-person integration and is not included.
 
 Stripe reference: https://docs.stripe.com/invoicing/hosted-invoice-page
+
+## Industries, products & services
+
+Select your primary industry in **Settings** or browse **Products & services**. The catalog includes 45 industry choices covering trades, creative businesses, finance, property, hospitality, retail, professional services, and Other. You can also select additional industries and describe your business in your own words.
+
+Each industry provides editable suggested billable items and categories with appropriate units. Choose which suggestions to add; imports preserve existing items and prices and skip duplicates. Suggested prices start blank so you can enter your own rates. Browse another industry to combine catalogs.
+
+Create custom products or services with a category, description, SKU/item code, unit, and optional price. Search and filter the catalog by type and category, or export it as CSV. Both invoice and estimate editors have a shared picker for adding several products/services at once, plus a quick-add menu and custom line entry. Adjust quantities, prices, categories, and units in each document. Catalog changes do not alter previously saved document lines. Product information survives estimate conversion, duplication, printouts, backup, and restore.
+
+Existing service records and workspace backups remain compatible. Inventory stock tracking is not included; product quantities here describe what is billed.

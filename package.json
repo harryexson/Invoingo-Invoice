@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "check": "node --check app.js && node --check domain.js && node --check server.js && node --check wallet.js",
-    "test": "node --test domain.test.js wallet.test.js"
+    "check": "node --check app.js && node --check domain.js && node --check server.js && node --check wallet.js && node --check catalog.js && node --check catalog-ui.js",
+    "test": "node --test domain.test.js wallet.test.js catalog.test.js"
   }
 }
