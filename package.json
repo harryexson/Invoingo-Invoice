@@ -1,0 +1,10 @@
+{
+  "name": "invoigo",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check app.js && node --check domain.js && node --check server.js && node --check wallet.js",
+    "test": "node --test domain.test.js wallet.test.js"
+  }
+}
