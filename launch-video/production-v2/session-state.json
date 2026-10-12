@@ -1,0 +1,70 @@
+{
+  "checked": "2026-10-09",
+  "provider": "Higgsfield browser",
+  "signedIn": true,
+  "model": "kling3_0",
+  "asset": "@Cheryl-elements",
+  "state": "Generation completed. Higgsfield player reports 15.041995 seconds and the clip is visible in History. Cheryl is visibly seated in the referenced office at the speech portion. Download attempt created an incomplete .crdownload and timed out, so local Remotion integration is still blocked.",
+  "generationSubmitted": true,
+  "jobId": "6aa5d4c0-1ae1-43fa-99b4-aaebce505468",
+  "next": "Save the completed Higgsfield clip as launch-video/public/intro/videos/introduction.mp4 through an available supported file-download path; then inspect full motion, speech and lip-sync, run the integrated Remotion draft/QA/render. Do not resubmit job 6aa5d4c0-1ae1-43fa-99b4-aaebce505468.",
+  "uploadedAssets": {
+    "office": "729f92bb-747a-4e60-99fd-31892b167421",
+    "newCharacterPortrait": null,
+    "newCharacterTriptych": null,
+    "characterElement": "@Cheryl-elements"
+  },
+  "requestId": "6aa5d4c0-1ae1-43fa-99b4-aaebce505468",
+  "newReferenceAssets": [
+    "reference-inputs/cheryl-portrait.png",
+    "reference-inputs/cheryl-angle-triptych.png",
+    "reference-inputs/modern-home-office.png"
+  ],
+  "lastObservedCredits": 30,
+  "lastObservedCreditsContext": "Kling 3.0 current draft: 15s, 16:9, 720p, Audio on; Generate showed 30 credits. The previously generated short take in provider history is also Kling 3.0, but was configured at 1080p and used a superseded outfit/source image.",
+  "legacyUploadedAssets": {
+    "identity": "3e759f24-c057-4a94-8616-95efc437d3fc",
+    "seatedCheryl": "b0dad728-eddb-4759-83f4-05c63ada4a02",
+    "doNotReuse": true
+  },
+  "effectiveCredits": 30,
+  "draftParameters": {
+    "durationSeconds": 15,
+    "aspectRatio": "16:9",
+    "resolution": "720p",
+    "model": "kling3_0",
+    "displayedCredits": 30,
+    "audioOn": true,
+    "startFrameAttached": true,
+    "newIdentityReferencesAttached": true,
+    "multiShot": false
+  },
+  "costNote": "The submitted take is Kling 3.0, 15s, 16:9, 720p with audio on; the Generate button showed 30 credits. It is queued under asset/job ID 6aa5d4c0-1ae1-43fa-99b4-aaebce505468.",
+  "providerHistoryVisible": "New integrated Cheryl generation is queued; accepted asset/job ID 6aa5d4c0-1ae1-43fa-99b4-aaebce505468. Previous 15-second 1080p output uses superseded charcoal suit/navy blouse reference and is not selected.",
+  "costCheck": {
+    "currentIntegratedTake": 30,
+    "currentIntegratedTakeSettings": "Submitted Kling 3.0, 15 seconds, 16:9, 720p, Audio on; Generate button showed 30 credits",
+    "previousKlingTake": "15 seconds, 1080p; superseded appearance/prompt; no historical job ID visible",
+    "fourSeconds720p": 5,
+    "eightSeconds720p": 10,
+    "fourSeconds1080p": 12,
+    "eightSeconds1080p": 24,
+    "plannedFirstPassCredits": 30,
+    "plannedSources": "8s entrance + 4s sit-down + 8s introduction + 8s closing",
+    "audioOnDoesNotChangePrice": true
+  },
+  "acceptedGeneration": {
+    "jobAssetId": "6aa5d4c0-1ae1-43fa-99b4-aaebce505468",
+    "status": "completed",
+    "model": "Kling 3.0",
+    "durationSeconds": 15.041995,
+    "aspectRatio": "16:9",
+    "resolution": "720p",
+    "audioOn": true,
+    "multiShot": false,
+    "credits": 30,
+    "characterElement": "@Cheryl-elements",
+    "startFrameOfficeAsset": "729f92bb-747a-4e60-99fd-31892b167421"
+  },
+  "outputUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3KR9U9i5dUDhpPsy14ogTJ4PGr1/hf_20261010_012827_6aa5d4c0-1ae1-43fa-99b4-aaebce505468.mp4"
+}

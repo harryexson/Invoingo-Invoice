@@ -1,0 +1,12 @@
+const fs=require('node:fs');function change(file,a,b){let s=fs.readFileSync(file,'utf8');if(!s.includes(a))throw Error('Missing '+file+' '+a.slice(0,40));fs.writeFileSync(file,s.replace(a,b));}
+change('miobot-ui.js',"async function sync(){if(demo()){localState();return;}const fresh=await api('state');state={...state,...fresh};const workspace=structuredClone(localDB());", "async function sync(){if(demo()){localState();return;}if(!loaded)await load();mergeVerified();const workspace=structuredClone(localDB());");
+change('miobot-ui.js',"if(!demo()&&!state.snapshot)await sync();", "if(!demo())await sync();");
+change('miobot-ui.js',"if(!active)active=state.conversations[0]?.id;}loaded=true;}","if(!active)active=state.conversations[0]?.id;mergeVerified();}loaded=true;}");
+change('miobot-ui.js',"const localDB=()=>mobile?M.db:db", "const localDB=()=>mobile?M.db:db");
+change('miobot-ui.js',"function selected(){",`function mergeVerified(){if(demo()||!state.workspace)return;const local=localDB();let changed=false;for(const source of state.workspace.invoices){const d=local.invoices.find(i=>i.id===source.id);if(!d||!source.publicUrl)continue;for(const payment of source.payments.filter(p=>p.providerVerified)){const current=d.payments.find(p=>p.id===payment.id);if(!current){d.payments.push(structuredClone(payment));changed=true;}else if(current.reversed!==payment.reversed){Object.assign(current,payment);changed=true;}}if(JSON.stringify(d.collectionHold)!==JSON.stringify(source.collectionHold)){d.collectionHold=source.collectionHold;changed=true;}if(d.publicUrl!==source.publicUrl){d.publicUrl=source.publicUrl;changed=true;}}if(changed){try{if(mobile)M.save();else save();}catch(e){notify(e.message);}}}
+ function selected(){`);
+change('miobot-ui.js',"state={...state,...result};const newest=", "state={...state,...result};mergeVerified();const newest=");
+change('miobot-ui.js',"${n.type==='payment'?'Payment received':'Reminder delivery failed'}", "${n.type==='payment'?'Payment received':n.type==='collections-paused'?'Collections paused':'Reminder delivery failed'}");
+change('miobot-core.js',"status:B.status(d,today)", "status:d.collectionHold?'Review':B.status(d,today),collectionHold:!!d.collectionHold");
+change('miobot-ui.js',"${r.balance>0?btn('Draft reminder'", "${r.balance>0&&!r.collectionHold?btn('Draft reminder'");
+console.log('UI reconciliation and collection holds updated');

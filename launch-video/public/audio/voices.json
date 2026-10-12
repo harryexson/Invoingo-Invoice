@@ -1,0 +1,66 @@
+[
+  {
+    "file": "user-1.wav",
+    "text": "Where is my invoice for Alex Morgan?",
+    "voice": "am_michael",
+    "duration": 2.5813333333333333,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "mio-1.wav",
+    "text": "Alex\u2019s invoice is paid in full.",
+    "voice": "af_sarah",
+    "duration": 2.036,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "cheryl-tight.wav",
+    "text": "Meet In voingo. Your invoice maker on the go. And now, Mee oh Bot helps keep your work moving.",
+    "voice": "af_heart",
+    "duration": 5.747958333333333,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "user-2.wav",
+    "text": "Draft a reminder for the first one.",
+    "voice": "am_michael",
+    "duration": 2.1973333333333334,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "mio-2.wav",
+    "text": "Here\u2019s a draft. Nothing has been sent.",
+    "voice": "af_sarah",
+    "duration": 2.3292916666666668,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "user-3.wav",
+    "text": "Make it friendlier.",
+    "voice": "am_michael",
+    "duration": 1.408,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "mio-3.wav",
+    "text": "Ready for your review.",
+    "voice": "af_sarah",
+    "duration": 1.3333333333333333,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "mio-paid.wav",
+    "text": "Alex Morgan\u2019s payment is recorded. One thousand, three hundred and two dollars.",
+    "voice": "af_sarah",
+    "duration": 4.734,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  }
+]

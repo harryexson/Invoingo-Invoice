@@ -1,0 +1,3 @@
+# Hyperframes brief
+Implement the six-scene 20-second storyboard in brag-plan.md using the actual captured mobile app and landing PNGs. Product UI is the dominant material; graphics frame and animate it. Preserve forest/lime/paper identity and Inter.
+Register one paused seek-safe GSAP timeline as window.__timelines['features']. Explicit timing for root and six sections. Render with one worker on this machine. Check layout and contrast, snapshot six settled scenes, render 1920×1080/30fps, then make an H.264 baseline compatibility export with original AAC audio. Verify duration/frame count and visible browser playback. All activity and payment states are fictional demo records.

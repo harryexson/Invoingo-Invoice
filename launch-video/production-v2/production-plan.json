@@ -1,0 +1,144 @@
+{
+  "status": "Awaiting authenticated video-generation access; no new film rendered",
+  "brand": "Invoingo",
+  "assistant": "MioBot",
+  "durationSeconds": 60,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "presenter": {
+    "name": "Cheryl Clark",
+    "role": "Product, Invoingo",
+    "fictional": true
+  },
+  "references": {
+    "identityPortrait": "reference-inputs/cheryl-portrait.png",
+    "identityAngleTriptych": "reference-inputs/cheryl-angle-triptych.png",
+    "office": "reference-inputs/modern-home-office.png",
+    "officeHiggsfieldAssetId": "729f92bb-747a-4e60-99fd-31892b167421",
+    "legacyIdentity": "cheryl-identity-reference.png",
+    "legacyOffice": "office-reference.png",
+    "legacySeatedKeyframe": "../public/cheryl-office-reference-v2.png",
+    "legacyVisualUse": "superseded-by-user-supplied-references"
+  },
+  "verifiedOn": "2026-10-09",
+  "source": "http://127.0.0.1:4185/mobile.html#home",
+  "records": [
+    {
+      "invoice": "INV-1043",
+      "client": "Maya Chen",
+      "total": 781.94,
+      "status": "Partial",
+      "due": "2026-10-19"
+    },
+    {
+      "invoice": "INV-1042",
+      "client": "Alex Morgan",
+      "total": 1302,
+      "status": "Paid",
+      "due": "2026-10-02"
+    },
+    {
+      "invoice": "INV-1041",
+      "client": "Maya Chen",
+      "total": 705.25,
+      "status": "Draft",
+      "due": "2026-10-20"
+    }
+  ],
+  "shots": [
+    {
+      "id": "office-entrance",
+      "start": 0,
+      "duration": 8,
+      "type": "generated-motion",
+      "prompt": "Wide 16:9 documentary commercial shot of the supplied modern home office reference. The same fictional woman shown in the portrait and character triptych enters naturally and walks toward the chair behind the warm wood desk. Preserve her short natural black curls, warm medium-brown skin, dark forest-green pantsuit, ivory top, and gold hoop earrings. Carry a phone naturally. Preserve the dark open shelves, books, plants, framed artwork, large right-side window and soft daylight. Gentle tracking camera, believable human scale and movement, no teleportation, no cuts, no distorted hands, no text or invented app UI. Quiet footsteps and office ambience, no speech or music.",
+      "generatedDurationSeconds": 8,
+      "resolution": "720p",
+      "model": "seedance-1-5",
+      "displayedCredits": 10
+    },
+    {
+      "id": "sit-down",
+      "start": 8,
+      "duration": 4,
+      "type": "generated-motion",
+      "prompt": "Continue from the approved entrance clip final frame. Preserve the same Cheryl identity, short natural curls, green pantsuit, ivory top, hoop earrings, office layout and daylight from the supplied references. She approaches the same chair, pulls it out, and sits naturally behind the warm wood desk. Keep physical contact, weight, chair movement, phone hand, and clothing believable. Gentle push to a medium eye-level shot. No teleporting, identity or wardrobe drift, no speech. Quiet chair sound and room ambience.",
+      "generatedDurationSeconds": 4,
+      "resolution": "720p",
+      "model": "seedance-1-5",
+      "displayedCredits": 5
+    },
+    {
+      "id": "introduction",
+      "start": 12,
+      "duration": 8,
+      "type": "native-audio-presenter",
+      "audio": "cheryl-introduction.wav",
+      "script": "Hi, I'm Cheryl Clark, from Invoingo. Let me show you your invoice maker on the go.",
+      "spokenScript": "Hi, I'm Cheryl Clark, from In voingo. Let me show you your invoice maker on the go.",
+      "prompt": "Generate one continuous 8-second 16:9 video with native speech and phoneme-level lip sync. Use the supplied portrait and three-angle triptych as primary identity references and the supplied modern home office image as the primary setting reference. Preserve Cheryl's short natural black curls, warm medium-brown complexion, dark forest-green pantsuit, ivory crew-neck top, gold hoop earrings, and recognizable face. Preserve the warm wood desk, dark open shelves, books, plants, framed artwork, large right-side window and soft daylight. Medium eye-level shot; Cheryl is seated naturally behind the desk, holds her phone securely with its screen dark for later UI compositing, glances briefly down, then speaks to camera: ‘Hi, I'm Cheryl Clark, from Invoingo. Let me show you your invoice maker on the go.’ Pronounce Invoingo ‘In-voyn-go’. Keep her look and room continuous with the preceding sitting shot. One shot, subtle push-in, realistic expression, skin, hands, and phone grip; no captions, branding, extra dialogue, music, cuts, or face drift.",
+      "generatedDurationSeconds": 8,
+      "resolution": "720p",
+      "model": "seedance-1-5",
+      "displayedCredits": 10
+    },
+    {
+      "id": "invoices",
+      "start": 20,
+      "duration": 9,
+      "type": "actual-ui",
+      "audio": "cheryl-invoices.wav",
+      "script": "Here are my invoices, with balances and statuses in one place. I can open a record, or start a new invoice.",
+      "spokenScript": "Here are my invoices, with balances and statuses in one place. I can open a record, or start a new invoice."
+    },
+    {
+      "id": "miobot",
+      "start": 29,
+      "duration": 10,
+      "type": "actual-ui",
+      "audio": "cheryl-miobot.wav",
+      "script": "And MioBot is right here. I can ask about an invoice, then prepare a reminder. I review the draft before choosing to send it.",
+      "spokenScript": "And Mee oh Bot is right here. I can ask about an invoice, then prepare a reminder. I review the draft before choosing to send it."
+    },
+    {
+      "id": "features",
+      "start": 39,
+      "duration": 11,
+      "type": "actual-ui",
+      "audio": "cheryl-features.wav",
+      "script": "Client details, saved items and payment records stay close at hand. Alex's invoice is marked paid, for one thousand, three hundred and two dollars.",
+      "spokenScript": "Client details, saved items and payment records stay close at hand. Alex's invoice is marked paid, for one thousand, three hundred and two dollars."
+    },
+    {
+      "id": "closing",
+      "start": 50,
+      "duration": 10,
+      "type": "audio-driven-presenter",
+      "audio": "cheryl-closing.wav",
+      "script": "That's Invoingo. Your invoices, wherever you are. Invoice maker on the go.",
+      "spokenScript": "That's In voingo. Your invoices, wherever you are. Invoice maker on the go.",
+      "prompt": "Return to Cheryl seated behind the same warm wood desk in the supplied home office. Preserve her face, short natural curls, green pantsuit, ivory top, hoop earrings, the plants, dark open shelves, framed art, large window and soft daylight. She looks toward the camera, holds the phone naturally, and closes with a warm confident delivery. Maintain realistic expression and hands; subtle push-in; no identity or wardrobe drift, no extra dialogue, no abrupt cut. Hold the final composition for the three-second Invoingo end card.",
+      "generatedDurationSeconds": 8,
+      "resolution": "720p",
+      "model": "seedance-1-5",
+      "displayedCredits": 10
+    }
+  ],
+  "qaGates": [
+    "Reference identity consistency",
+    "Natural walking and sitting",
+    "Phoneme-level speech sync",
+    "Actual UI capture and verified data",
+    "Tracked phone screen replacement",
+    "Voice timing and music ducking",
+    "540p draft review before 1080p final"
+  ],
+  "publishGate": "Do not replace launch.html until required motion and lip-sync footage is generated, reviewed, and the complete Remotion export passes QA. Do not substitute animated stills for the requested human performance.",
+  "timelineNote": "60 seconds total: 8s entrance, 4s sit-down, 8s native-audio introduction, 9s invoices, 10s MioBot, 11s features, and 10s closing including the final 3-second end card. Narration WAV lengths are 4.956s, 6.889s, 7.796s, 9.427s, and 4.645s; all speech remains intact. First-pass source target: Seedance 1.5 Pro at 720p, 16:9 — 8s entrance (10 credits), 4s sit-down (5), 8s introduction with audio on (10), 8s closing with audio on (10), 35 credits total by the live per-duration quote. Final Remotion output remains 1920x1080. If a generated speaking take needs more time for natural delivery, retime the film while staying at or below 60 seconds; never cut speech.",
+  "audio": {
+    "musicBed": "public/intro/audio/music-bed.wav",
+    "sourceMusicBed": "public/intro/audio/music-bed.wav",
+    "extension": "none; original 60-second music bed"
+  }
+}

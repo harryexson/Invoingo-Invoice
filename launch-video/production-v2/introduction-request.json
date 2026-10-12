@@ -1,0 +1,18 @@
+{
+  "checked": "2026-10-09",
+  "requestId": "0f4bd0f4-b41c-476a-b6ec-fcfa2901bff5",
+  "state": "awaiting-user-approval-auto-review-denied",
+  "model": "seedance_2_5",
+  "durationSeconds": 8,
+  "aspectRatio": "16:9",
+  "resolution": "1080p",
+  "bitrate": "High",
+  "enhance": false,
+  "seed": null,
+  "startImageAssetId": "b0dad728-eddb-4759-83f4-05c63ada4a02",
+  "effectiveCredits": 96,
+  "ready": true,
+  "prompt": "Generate one 8-second 16:9 1080p shot with natural synchronized English speech and clean isolated dialogue. Use the attached Cheryl office reference as the exact first-frame identity and environment, preserving her face, short black curls, charcoal suit, navy blouse, necklace and earrings. Keep the same wooden desk, plants, framed artwork, shelves and daylight window. Medium eye-level documentary shot, subtle push-in. Natural skin texture, subtle breathing, occasional blinking, small confident smile, anatomically accurate hands. She holds the phone securely; its screen remains dark for later Invoingo UI compositing. She briefly glances down at the phone, then speaks warmly to camera: \"Hi, I'm Cheryl Clark, from Invoingo. Let me show you your invoice maker on the go.\" Pronounce Invoingo as In-voyn-go. Professional conversational female voice, moderate pace, complete all words with realistic phoneme-level mouth movement. No music, no captions, no branding baked into footage, no extra dialogue, no camera cuts, no face drift, no distorted fingers, no exaggerated gestures. Finish with a natural pause looking toward her phone. This is an approved fictional AI presenter.",
+  "jobId": null,
+  "submissionOutcome": "Rejected before submission: explicit approval of the 96-credit spend required."
+}

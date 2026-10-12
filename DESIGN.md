@@ -1,4 +1,4 @@
-# Invoigo — mobile product design
+# Invoingo — mobile product design
 
 ## Reference lock
 Design for independent businesses on iOS and Android. Make the journey from work completed to money received legible, quick, and reassuring.
@@ -12,7 +12,7 @@ Preserve forest #163300, white canvas, fog #e8ebe6, lime #9fe870, flat surfaces,
 | Home, invoices, clients, more navigation | User brief and feature inventory | Keep frequent tasks one tap away |
 | Compose → review → share → checkout | User's payment requirement | Connect merchant and recipient experiences |
 | Invoice timeline | Invoice Simple read receipts | Show whether an invoice needs attention |
-| Guest checkout | Invoigo design extension | Recipient need not install an app to pay |
+| Guest checkout | Invoingo design extension | Recipient need not install an app to pay |
 | Native platform adaptation | Android/iOS requirement | Respect safe areas, system sharing, wallets, back behavior |
 
 ## Feature coverage and delivery status

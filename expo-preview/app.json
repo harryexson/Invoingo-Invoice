@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Invoingo Preview",
+    "slug": "invoingo-preview",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/invoingo-icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#9fe870",
+        "foregroundImage": "./assets/invoingo-icon.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-splash-screen"
+    ]
+  }
+}

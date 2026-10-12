@@ -1,6 +1,6 @@
-# Invoigo
+# Invoingo
 
-A responsive, local-first invoicing workspace. Run `npm start` and open http://127.0.0.1:4173. No dependencies or installation are required beyond Node.js.
+A responsive, local-first invoicing workspace. Run `npm start` and open http://127.0.0.1:4173. Run `npm install` once to install the Stripe and Resend SDKs.
 
 ## Implemented
 
@@ -45,3 +45,13 @@ Each industry provides editable suggested billable items and categories with app
 Create custom products or services with a category, description, SKU/item code, unit, and optional price. Search and filter the catalog by type and category, or export it as CSV. Both invoice and estimate editors have a shared picker for adding several products/services at once, plus a quick-add menu and custom line entry. Adjust quantities, prices, categories, and units in each document. Catalog changes do not alter previously saved document lines. Product information survives estimate conversion, duplication, printouts, backup, and restore.
 
 Existing service records and workspace backups remain compatible. Inventory stock tracking is not included; product quantities here describe what is billed.
+
+## Complete mobile preview and launch page
+
+Run `npm run landing` and open http://127.0.0.1:4185/. The landing page links to the desktop workspace at `/app/` and the 23-screen iOS/Android studio at `/mobile.html`. Use All 23 screens for the live phone gallery. The default mobile demo uses fictional records in separate browser storage. Use my workspace opens your real local records.
+
+See [FEATURE-COVERAGE.md](FEATURE-COVERAGE.md) for screenshot coverage and remaining platform work, and [INTEGRATIONS.md](INTEGRATIONS.md) for test-mode Stripe and Resend setup. Native app binaries, subscriptions, OCR and multi-device account sync are not released.
+
+## Updated campaign & Expo Go preview
+
+The landing at port 4185 includes a 20-second original motion film, generated editorial image, animated hero and live iOS/Android workflow screens. Run `npm run preview:phone` for same-Wi-Fi device access (stop the existing 4185 server first), then `npm run preview:expo` in another terminal. Open http://127.0.0.1:4185/expo.html to scan the Expo Go QR. See expo-preview/README.md for scope and device testing instructions.

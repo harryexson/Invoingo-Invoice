@@ -1,0 +1,47 @@
+[
+  {
+    "file": "cheryl-introduction.wav",
+    "start": 10,
+    "duration": 4.956,
+    "slot": 8,
+    "fits": true,
+    "voice": "Kokoro af_heart",
+    "script": "Hi, I'm Cheryl Clark, from Invoingo. Let me show you your invoice maker on the go."
+  },
+  {
+    "file": "cheryl-invoices.wav",
+    "start": 18,
+    "duration": 6.889,
+    "slot": 10,
+    "fits": true,
+    "voice": "Kokoro af_heart",
+    "script": "Here are my invoices, with balances and statuses in one place. I can open a record, or start a new invoice."
+  },
+  {
+    "file": "cheryl-miobot.wav",
+    "start": 28,
+    "duration": 7.796,
+    "slot": 12,
+    "fits": true,
+    "voice": "Kokoro af_heart",
+    "script": "And MioBot is right here. I can ask about an invoice, then prepare a reminder. I review the draft before choosing to send it."
+  },
+  {
+    "file": "cheryl-features.wav",
+    "start": 40,
+    "duration": 9.427,
+    "slot": 10,
+    "fits": true,
+    "voice": "Kokoro af_heart",
+    "script": "Client details, saved items and payment records stay close at hand. Alex's invoice is marked paid, for one thousand, three hundred and two dollars."
+  },
+  {
+    "file": "cheryl-closing.wav",
+    "start": 50,
+    "duration": 4.645,
+    "slot": 10,
+    "fits": true,
+    "voice": "Kokoro af_heart",
+    "script": "That's Invoingo. Your invoices, wherever you are. Invoice maker on the go."
+  }
+]

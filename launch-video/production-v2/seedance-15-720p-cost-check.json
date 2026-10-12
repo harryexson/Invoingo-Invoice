@@ -1,0 +1,18 @@
+{
+  "checked": "2026-10-09",
+  "provider": "Higgsfield browser",
+  "model": "seedance-1-5",
+  "modelDisplay": "Seedance 1.5 Pro",
+  "aspectRatio": "16:9",
+  "audio": "on",
+  "quotes": {"4s_720p": 5, "8s_720p": 10, "4s_1080p": 12, "8s_1080p": 24},
+  "plannedFirstPass": [
+    {"clip":"office-entrance.mp4","durationSeconds":8,"resolution":"720p","credits":10,"audio":"ambience only"},
+    {"clip":"sit-down.mp4","durationSeconds":4,"resolution":"720p","credits":5,"audio":"ambience only"},
+    {"clip":"introduction.mp4","durationSeconds":8,"resolution":"720p","credits":10,"audio":"native speech and lip sync"},
+    {"clip":"closing.mp4","durationSeconds":8,"resolution":"720p","credits":10,"audio":"native speech and lip sync"}
+  ],
+  "estimatedCredits": 35,
+  "submitted": false,
+  "note": "The UI showed the per-duration rates above. Speech and lip sync use audio-on. New identity uploads remain unconfigured. The final Remotion film is 60 seconds at 1920x1080, with generated 720p source footage upscaled in assembly."
+}

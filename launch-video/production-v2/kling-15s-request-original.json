@@ -1,0 +1,27 @@
+{
+  "checked": "2026-10-09",
+  "requestId": "477e507a-169d-43a9-93fa-8bd5fa85c0d2",
+  "state": "local-prepared-provider-reconfiguration-required",
+  "provider": "Higgsfield",
+  "model": "kling3_0",
+  "durationSeconds": 15,
+  "aspectRatio": "16:9",
+  "resolution": "1080p",
+  "effectiveCredits": null,
+  "lastObservedCredits": 37.5,
+  "costNote": "37.5 credits was displayed for the previous 15-second 1080p Kling 3.0 configuration before these new character references were attached. Recheck the effective price after adding them.",
+  "readiness": "Not checked in a live provider draft this turn.",
+  "startImageAssetId": null,
+  "referenceAssets": [
+    "reference-inputs/cheryl-portrait.png",
+    "reference-inputs/cheryl-angle-triptych.png",
+    "reference-inputs/modern-home-office.png"
+  ],
+  "existingOfficeHiggsfieldAssetId": "729f92bb-747a-4e60-99fd-31892b167421",
+  "requiresNewUploads": [
+    "reference-inputs/cheryl-portrait.png",
+    "reference-inputs/cheryl-angle-triptych.png"
+  ],
+  "prompt": "Generate one continuous 15-second 16:9 1080p video of the fictional presenter Cheryl Clark, Product, Invoingo. Use the supplied close portrait and the three-panel character sheet together as primary identity references. The same person appears in all panels; maintain her face, warm medium-brown skin, short natural black curls, approximate age and body proportions. Preserve the dark forest-green pantsuit, ivory crew-neck top, gold hoop earrings and nude heels. Use the supplied warm modern home office as the primary environmental reference: warm wood desk, dark open shelves and books, plants, framed artwork, large window on the right, soft daylight. Cheryl is seated naturally behind the desk, holding a phone securely with its screen dark for later Invoingo UI compositing. Medium eye-level documentary framing with a subtle slow push-in. Natural breathing, blinking, hands, skin and restrained expression. She glances briefly at the phone, looks back to camera and speaks warmly in a clear conversational professional female voice: “Hi, I'm Cheryl Clark, from Invoingo. Let me show you your invoice maker on the go.” Pronounce Invoingo “In-voyn-go”. Keep natural speech timing and lip synchronization. Let remaining time breathe with small natural pauses and a gentle glance toward the phone; do not add dialogue. One shot, no cuts, no captions, no baked-in branding, no music, no face or wardrobe drift, no distorted fingers or exaggerated gestures. This is an approved fictional AI presenter.",
+  "jobId": null
+}

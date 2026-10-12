@@ -1,0 +1,23 @@
+{
+  "checked": "2026-10-09",
+  "provider": "Higgsfield browser",
+  "state": "Configured draft only; no generation submitted",
+  "model": "kling3_0_turbo",
+  "modelDisplay": "Kling 3.0 Turbo",
+  "durationSeconds": 8,
+  "aspectRatio": "16:9",
+  "resolution": "720p",
+  "displayedCredits": 12,
+  "effectiveCreditsForFinal": false,
+  "quoteContext": "12 credits shown on the live 8-second 16:9 720p Turbo form before attaching the new reference image. Reference upload and speech capability are not complete.",
+  "nativeAudioControlVisible": false,
+  "newReferenceAttached": false,
+  "replacedLegacyReference": true,
+  "prompt": "Generate one continuous 8-second 16:9 1080p video with native speech and phoneme-level lip sync for fictional presenter Cheryl Clark, Product, Invoingo. Use the supplied portrait and three-angle character sheet together as primary identity references and the supplied warm modern home office as the environment reference. Preserve Cheryl’s face, medium-brown skin, short natural black curls, forest-green pantsuit, ivory top, gold hoop earrings, and office layout. Cheryl sits naturally behind the warm wood desk and holds her phone securely with its screen dark for later product UI compositing. Medium eye-level documentary framing, subtle slow push-in, natural breathing, blinking, realistic skin and hands. She looks to camera and speaks warmly in a clear professional female voice: ‘Hi, I’m Cheryl Clark, from Invoingo. Let me show you your invoice maker on the go.’ Pronounce Invoingo ‘In-voyn-go’. Keep the whole line audible, paced naturally, with accurate mouth synchronization. No extra dialogue, music, captions, logos, cuts, face drift, wardrobe changes, or distorted hands. Fictional AI presenter approved for this production.",
+  "sourceAssets": {
+    "portrait": "reference-inputs/cheryl-portrait.png",
+    "triptych": "reference-inputs/cheryl-angle-triptych.png",
+    "officeHiggsfieldAssetId": "729f92bb-747a-4e60-99fd-31892b167421"
+  },
+  "providerJobId": null
+}

@@ -1,0 +1,10 @@
+const path=require('node:path');
+const fs=require('node:fs');
+const {spawn}=require('node:child_process');
+const root=path.join(__dirname,'expo-preview');
+const preview=fs.readFileSync(path.join(root,'.env'),'utf8').match(/^EXPO_PUBLIC_PREVIEW_URL=(.+)$/m)?.[1];
+if(!preview)throw Error('Start npm run preview:phone before opening Expo Go.');
+const host=new URL(preview.trim()).hostname;
+const env={...process.env,EXPO_OFFLINE:'1',EXPO_NO_TELEMETRY:'1',REACT_NATIVE_PACKAGER_HOSTNAME:host,NODE_OPTIONS:[process.env.NODE_OPTIONS,'--use-system-ca'].filter(Boolean).join(' ')};
+const child=spawn(process.execPath,[path.join(root,'node_modules/expo/bin/cli'),'start','--offline','--port','8081'],{cwd:root,env,stdio:'inherit'});
+child.on('exit',code=>process.exit(code||0));

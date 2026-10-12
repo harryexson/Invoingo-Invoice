@@ -1,0 +1,24 @@
+{
+  "name": "invoingo-launch-45s",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.ts --no-open",
+    "draft": "remotion render src/index.ts InvoingoLaunch dist/invoingo-launch-draft.mp4 --scale=0.5 --codec=h264 --concurrency=2",
+    "render": "remotion render src/index.ts InvoingoLaunch dist/invoingo-launch-remotion.mp4 --codec=h264 --crf=17 --concurrency=2 && node tools/finalize.cjs",
+    "poster": "remotion still src/index.ts InvoingoLaunch dist/invoingo-launch-final.png --frame=1349",
+    "intro:draft": "node tools/check-intro-assets.cjs && remotion render src/index.ts InvoingoIntro dist/invoingo-intro-draft.mp4 --scale=0.5 --codec=h264 --concurrency=2",
+    "intro:render": "node tools/check-intro-assets.cjs && remotion render src/index.ts InvoingoIntro dist/invoingo-intro-60s.mp4 --codec=h264 --crf=17 --concurrency=2",
+    "intro:integrated:draft": "node tools/check-integrated-intro.cjs && remotion render src/index.ts InvoingoIntroIntegrated dist/invoingo-intro-integrated-draft.mp4 --scale=0.5 --codec=h264 --concurrency=2",
+    "intro:integrated:render": "node tools/check-integrated-intro.cjs && remotion render src/index.ts InvoingoIntroIntegrated dist/invoingo-intro-integrated-57s.mp4 --codec=h264 --crf=17 --concurrency=2"
+  },
+  "dependencies": {
+    "remotion": "4.0.534",
+    "@remotion/cli": "4.0.534",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "@types/react": "^19.2.0"
+  }
+}

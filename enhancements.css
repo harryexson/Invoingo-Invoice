@@ -1,0 +1,2 @@
+@import url('landing/assets/fonts.css');
+body{font-family:Inter,Arial,sans-serif}h1{font-weight:900;letter-spacing:-.055em}.brand{font-weight:900}#sidebar{overflow:auto}#navigation{gap:3px}#navigation a{font-size:12px;padding:11px 13px}.workspace-label{margin-top:30px}.sidebar-bottom{padding-top:25px}.stat.feature strong{color:var(--lime)}@media(max-width:700px){#navigation a{font-size:11px}.page-head h1{font-size:36px;line-height:1.03}.stat.feature{padding:28px}.stat.feature strong{font-size:39px}.panel{border-radius:18px}}

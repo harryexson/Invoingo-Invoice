@@ -1,0 +1,15 @@
+{
+  "checked": "2026-10-09",
+  "requestId": "2b82d13b-981d-44b7-9c4f-1ab2c797b1d5",
+  "state": "prepared-not-submitted",
+  "provider": "Higgsfield",
+  "model": "kling3_0",
+  "durationSeconds": 15,
+  "aspectRatio": "16:9",
+  "resolution": "1080p",
+  "effectiveCredits": 37.5,
+  "readiness": "Configured in the signed-in UI. Prompt and audio option are enabled.",
+  "startImageAssetId": "b0dad728-eddb-4759-83f4-05c63ada4a02",
+  "prompt": "Generate one continuous 15-second 16:9 1080p video, using the attached seated Cheryl reference as the exact first frame, identity, clothing and office setting. Preserve her short black curls, charcoal suit, navy blouse, necklace, earrings, the wooden desk, plants, framed artwork, shelves and daylight window. Medium eye-level documentary composition with a subtle slow push-in; realistic skin, breathing, blinking, hands and phone grip. Cheryl holds her phone securely with the screen dark for later Invoingo compositing. She glances briefly at the phone, looks back to camera and speaks warmly in a natural professional female voice: ‘Hi, I'm Cheryl Clark, from Invoingo. Let me show you your invoice maker on the go.’ Pronounce Invoingo ‘In-voyn-go’. Keep natural phoneme-level lip sync and conversational pacing. Let the remaining time breathe with small natural pauses and a gentle glance to the phone; do not add dialogue. One shot only, no cuts. No music, captions, baked-in branding, face drift, distorted fingers or exaggerated gestures. Approved fictional AI presenter.",
+  "jobId": null
+}

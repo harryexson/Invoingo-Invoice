@@ -1,0 +1,3 @@
+const fs=require('node:fs'),path=require('node:path'),{Readable}=require('node:stream'),{pipeline}=require('node:stream/promises');
+const out=path.resolve(__dirname,'../../.local-tools/launch-voice-model');fs.mkdirSync(out,{recursive:true});
+(async()=>{for(const name of ['kokoro-v1.0.onnx','voices-v1.0.bin']){const dest=path.join(out,name);if(fs.existsSync(dest))continue;const r=await fetch('https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/'+name,{signal:AbortSignal.timeout(300000)});if(!r.ok)throw Error('Model download failed: '+r.status);await pipeline(Readable.fromWeb(r.body),fs.createWriteStream(dest));console.log(name,fs.statSync(dest).size,'bytes');}})().catch(e=>{console.error(e.message);process.exitCode=1;});

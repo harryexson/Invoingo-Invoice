@@ -1,0 +1,27 @@
+# Grok Imagine 1.5 Lite generation prompts — phone-led revision
+
+Reuse the existing Higgsfield `@Cheryl-elements` reference and the uploaded modern home-office image. Output 16:9 at 720p. Audio on/native speech only for prompts 1, 2, and 4. No separate music in the generated clips; Remotion supplies the music bed. The live generator quoted 1 credit per second for Grok Imagine 1.5 Lite, so the planned 15s + 15s + 8s + 6s = 44 seconds of source video quotes 44 credits total, below the user's previously approved 60-second generation allowance. Recheck each displayed quote before submission and log the returned job ID and parameters.
+
+## 1 — Office entrance, sit, and introduction (15 seconds)
+
+Create one continuous 15-second 16:9 video at 720p with native spoken audio and accurate natural lip synchronization. Use the supplied Cheryl portrait and three-view reference in `@Cheryl-elements` to preserve the same fictional woman, face, short natural black curls, warm medium-brown skin, approximate age, body proportions, forest-green pantsuit, ivory crew-neck top, gold hoop earrings, and nude heels. Use the supplied modern home office image as the exact setting: warm wood desk, dark open shelves and books, plants, framed artwork, large right-side window, and soft daylight. Keep it recognizable.
+
+Timing: seconds 0–4, Cheryl enters from the right carrying her phone at her side and walks toward the chair. Seconds 4–7, she reaches the same chair, pulls it back, turns, and sits with believable balance and chair contact. Seconds 7–9, she settles and holds the phone securely in one hand, screen dark and angled toward camera. Seconds 9–15, she looks to camera and says exactly: “Hi, I'm Cheryl Clark, Product at Invoingo. Let me show you how I use MioBot from my phone.” Speak conversationally at a natural pace, with a small glance to the phone. Pronounce Invoingo “In-voyn-go.”
+
+Keep the camera at eye level, wide enough to show the entrance and sit before settling to a medium shot. Restrained expression and gestures, natural blink and quiet even breathing. No sighs, heavy exhalations, gasps, panting, added dialogue, music, captions, text, logos, cuts, identity drift, wardrobe drift, malformed hands, duplicated objects, teleporting, or implausible chair contact. Keep the phone screen blank and dark for actual UI compositing.
+
+## 2 — Cheryl asks MioBot and requests a reminder (15 seconds)
+
+Create one continuous 15-second 16:9 720p video with native female speech and natural phoneme-synchronized lip movement. Use `@Cheryl-elements` for the same fictional Cheryl identity, forest-green suit, ivory top, short curls, gold hoops, and the same warm modern home office. Begin with Cheryl already seated at the warm wood desk. She holds a modern unbranded smartphone securely in her left hand, clearly visible between her face and the camera. Keep the screen dark, blank, nearly face-on, and steady enough for later screen replacement. Her thumb taps the phone once naturally as she opens MioBot; she glances down to the phone, speaks her exact words, then reads the screen with a small confident smile.
+
+Cheryl says exactly: “Mio, which invoice still needs a follow-up? What's left on Maya Chen's INV-1043? Prepare a friendly reminder for her. I'll review it before sending.” Pronounce invoice numbers and names clearly. She is asking MioBot directly through her phone, not speaking as a voice-over. No second person and no audible MioBot voice; the actual app response will be shown on the phone screen in post.
+
+Use one calm medium shot with a gentle push-in. Keep her phone and face in frame. No desktop monitor or large display. No sighs, gasps, heavy breathing, extra dialogue, music, captions, text, brand marks, screen graphics, cuts, face or clothing drift, hand/finger distortion, or phone teleporting. Quiet even breathing; no long empty pause.
+
+## 3 — Phone-in-hand close-up for the real UI replacement (8 seconds)
+
+Create one continuous 8-second 16:9 720p realistic product-film close-up in the same warm home office. Show Cheryl's recognizable forest-green sleeve and one natural hand securely holding a modern unbranded smartphone above the warm wood desk. Keep the entire screen plane visible, nearly square to camera, unobstructed, and in a stable position throughout, with a completely blank dark screen and enough bezel around it for a precise tracked replacement. Allow only tiny natural hand movement. No face required, no dialogue, no music, no text, no logos, no other device, no cut, no extra fingers, no reflections hiding the screen, and no change to the office light or desk surface. Preserve realistic skin, nails, phone proportions, and contact shadows.
+
+## 4 — Closing (6 seconds)
+
+Create one continuous 6-second 16:9 720p video with native speech and natural lip synchronization. Use `@Cheryl-elements` and the same office reference to keep the same Cheryl identity, forest-green suit, ivory top, curls, and hoop earrings. Medium eye-level shot at the desk. She holds the phone naturally in one hand, lowers her gaze to it for a beat, then looks to camera and says exactly: “That's Invoingo—your invoices, wherever you are.” Warm, calm, confident delivery; natural short pause after “Invoingo.” No sigh, gasp, panting, extra dialogue, music, captions, logos, cuts, face or wardrobe drift, or malformed hands. Leave a calm two-second visual hold for the end-card transition.
