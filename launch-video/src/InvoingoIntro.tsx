@@ -1,58 +1,164 @@
 import React, {useEffect, useState} from 'react';
-import {AbsoluteFill, Audio, Sequence, OffthreadVideo, staticFile, useCurrentFrame, interpolate, delayRender, continueRender} from 'remotion';
-import {ActualPhone, Arrival, Heading, Logo, Disclosure} from './components/Product';
-import {InvoiceOverview} from './scenes/InvoiceOverview';
-import {PaymentStatus} from './scenes/PaymentStatus';
+import {
+  AbsoluteFill,
+  Audio,
+  Img,
+  OffthreadVideo,
+  Sequence,
+  interpolate,
+  staticFile,
+  continueRender,
+  delayRender,
+  useCurrentFrame,
+} from 'remotion';
+import {Logo} from './components/Product';
 import {T} from './styles/invoingoTokens';
 
-// Required generated clips are never replaced by static presenter images.
-// The guarded render command checks these files before a complete export.
-function CherylPresenter({file, title=false}: {file:string; title?:boolean}) {
-  const frame=useCurrentFrame();
-  return <AbsoluteFill>
-    <OffthreadVideo src={staticFile(`intro/videos/${file}`)} style={{width:'100%',height:'100%',objectFit:'cover'}}/>
-    {title && <Arrival at={15} style={{position:'absolute',left:85,bottom:95,padding:'22px 30px',borderRadius:18,background:'#163300e8',color:'white',fontSize:32}}><strong>Cheryl Clark</strong><div style={{fontSize:23,marginTop:5}}>Product, Invoingo</div></Arrival>}
-    <div style={{position:'absolute',bottom:30,right:45,fontSize:17,color:'white',textShadow:'0 1px 6px #000',opacity:interpolate(frame,[0,12],[0,1],{extrapolateRight:'clamp'})}}>Fictional AI presenter</div>
-  </AbsoluteFill>;
+const video = (file: string) => staticFile(`intro/videos/${file}`);
+const screen = (file: string) => staticFile(`screens/${file}-full.jpg`);
+
+function FullFrameTake({
+  file,
+  startFrom = 0,
+  endAt,
+  muted = false,
+}: {
+  file: string;
+  startFrom?: number;
+  endAt?: number;
+  muted?: boolean;
+}) {
+  return (
+    <AbsoluteFill style={{backgroundColor: '#111'}}>
+      <OffthreadVideo
+        src={video(file)}
+        startFrom={startFrom}
+        endAt={endAt}
+        muted={muted}
+        style={{width: '100%', height: '100%', objectFit: 'cover'}}
+      />
+    </AbsoluteFill>
+  );
 }
 
-function MioBotDemo() {
-  const frame=useCurrentFrame();
-  const showDraft=frame>=150;
-  return <AbsoluteFill style={{padding:'140px 100px'}}>
-    <Heading kicker="MIOBOT · INSIDE INVOINGO">Ask a question.<br/>Review the next step.</Heading>
-    <Arrival at={35} style={{width:680,fontSize:30,lineHeight:1.5,marginTop:50}}>Find invoice information and prepare a reminder.<br/>Review the message before sending.</Arrival>
-    <div style={{position:'absolute',right:165,top:60,transform:`translateX(${interpolate(frame,[0,30],[30,0],{extrapolateRight:'clamp'})}px)`}}>
-      <ActualPhone screen={showDraft?'current-miobot-draft':'current-miobot-alex'}/>
+function HandsetScreen({which}: {which: 'current-miobot-draft' | 'current-miobot-alex'}) {
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: 797,
+        top: 149,
+        width: 342,
+        height: 734,
+        borderRadius: 40,
+        overflow: 'hidden',
+        backgroundColor: '#fff',
+      }}
+    >
+      <Img
+        src={screen(which)}
+        style={{
+          position: 'absolute',
+          width: 1575,
+          height: 1065,
+          maxWidth: 'none',
+          left: -736,
+          top: -134,
+        }}
+      />
     </div>
-    <Disclosure/>
-  </AbsoluteFill>;
+  );
 }
 
-function Closing() {
-  const frame=useCurrentFrame();
-  return <AbsoluteFill>
-    <Sequence durationInFrames={210}><CherylPresenter file="closing.mp4"/></Sequence>
-    <Sequence from={210} durationInFrames={90}><AbsoluteFill style={{background:T.forest,color:T.lime,alignItems:'center',justifyContent:'center'}}><Logo size={140}/><div style={{fontSize:45,marginTop:35,color:T.mist}}>Invoice maker on the go!</div></AbsoluteFill></Sequence>
-    <div style={{position:'absolute',bottom:30,left:45,color:frame>=210?T.mist:'white',fontSize:17}}>Invoingo web/mobile preview · Fictional demonstration records</div>
-  </AbsoluteFill>;
+function PhoneConversation() {
+  const frame = useCurrentFrame();
+  const alexReplyStarts = 278; // 9.27 seconds, after the Maya voice file completes.
+  const which = frame < alexReplyStarts ? 'current-miobot-draft' : 'current-miobot-alex';
+  const scale = interpolate(frame, [0, 510], [1, 1.025], {extrapolateRight: 'clamp'});
+
+  return (
+    <AbsoluteFill style={{backgroundColor: '#211e19'}}>
+      <AbsoluteFill style={{transform: `scale(${scale})`, transformOrigin: 'center center'}}>
+        <Img
+          src={staticFile('intro/phone-screen-start-v2.png')}
+          style={{width: '100%', height: '100%', objectFit: 'cover'}}
+        />
+        <HandsetScreen which={which} />
+      </AbsoluteFill>
+      <Audio src={staticFile('intro/audio/miobot-maya-response.wav')} volume={1} />
+      <Sequence from={alexReplyStarts} durationInFrames={232}>
+        <Audio src={staticFile('intro/audio/miobot-alex-response.wav')} volume={1} />
+      </Sequence>
+    </AbsoluteFill>
+  );
+}
+
+function EndCard() {
+  const frame = useCurrentFrame();
+  return (
+    <AbsoluteFill
+      style={{
+        backgroundColor: T.forest,
+        color: T.mist,
+        alignItems: 'center',
+        justifyContent: 'center',
+        opacity: Math.min(1, frame / 12),
+      }}
+    >
+      <Logo size={132} />
+      <div style={{fontSize: 42, marginTop: 28}}>Invoice maker on the go!</div>
+      <div style={{position: 'absolute', bottom: 38, fontSize: 16, opacity: 0.72}}>
+        Fictional Invoingo preview records
+      </div>
+    </AbsoluteFill>
+  );
 }
 
 export function InvoingoIntro() {
-  const [fontHandle]=useState(()=>delayRender('Load actual Invoingo fonts'));
-  useEffect(()=>{
-    const regular=new FontFace('Invoingo Inter',`url(${staticFile('fonts/inter-400.ttf')})`,{weight:'400'});
-    const bold=new FontFace('Invoingo Inter',`url(${staticFile('fonts/inter-900.ttf')})`,{weight:'900'});
-    Promise.all([regular.load(),bold.load()]).then(fonts=>{fonts.forEach(font=>(document.fonts as FontFaceSet & {add(font:FontFace):void}).add(font));continueRender(fontHandle);}).catch(()=>continueRender(fontHandle));
-  },[fontHandle]);
-  return <AbsoluteFill style={{fontFamily:T.font,background:T.fog,color:T.forest}}>
-    <Sequence durationInFrames={240}><CherylPresenter file="office-entrance.mp4"/></Sequence>
-    <Sequence from={240} durationInFrames={120}><CherylPresenter file="sit-down.mp4"/></Sequence>
-    <Sequence from={360} durationInFrames={240}><CherylPresenter file="introduction.mp4" title/></Sequence>
-    <Sequence from={600} durationInFrames={270}><InvoiceOverview/><Disclosure/><Audio src={staticFile('intro/audio/cheryl-invoices.wav')}/></Sequence>
-    <Sequence from={870} durationInFrames={300}><MioBotDemo/><Audio src={staticFile('intro/audio/cheryl-miobot.wav')}/></Sequence>
-    <Sequence from={1170} durationInFrames={330}><PaymentStatus/><Disclosure/><Audio src={staticFile('intro/audio/cheryl-features.wav')}/></Sequence>
-    <Sequence from={1500} durationInFrames={300}><Closing/></Sequence>
-    <Audio src={staticFile('intro/audio/music-bed.wav')} volume={.12}/>
-  </AbsoluteFill>;
+  const [fontHandle] = useState(() => delayRender('Load Invoingo fonts'));
+  useEffect(() => {
+    const regular = new FontFace('Invoingo Inter', `url(${staticFile('fonts/inter-400.ttf')})`, {weight: '400'});
+    const bold = new FontFace('Invoingo Inter', `url(${staticFile('fonts/inter-900.ttf')})`, {weight: '900'});
+    Promise.all([regular.load(), bold.load()])
+      .then((fonts) => {
+        fonts.forEach((font) => (document.fonts as FontFaceSet & {add(font: FontFace): void}).add(font));
+        continueRender(fontHandle);
+      })
+      .catch(() => continueRender(fontHandle));
+  }, [fontHandle]);
+
+  return (
+    <AbsoluteFill style={{fontFamily: T.font, backgroundColor: '#111'}}>
+      {/* 0–6s: entrance and sitting, with no dialogue. */}
+      <Sequence durationInFrames={180}>
+        <FullFrameTake file="office-entrance-take.mp4" endAt={180} muted />
+      </Sequence>
+
+      {/* 6–16s: native synchronized intro, with time for the complete spoken line. */}
+      <Sequence from={180} durationInFrames={300}>
+        <FullFrameTake file="seated-introduction-take.mp4" endAt={300} />
+      </Sequence>
+
+      {/* 16–31s: Cheryl asks MioBot about the outstanding invoice. */}
+      <Sequence from={480} durationInFrames={450}>
+        <FullFrameTake file="miobot-question-take.mp4" endAt={450} />
+      </Sequence>
+
+      {/* 31–48s: MioBot speaks both verified responses over the real phone UI. */}
+      <Sequence from={930} durationInFrames={510}>
+        <PhoneConversation />
+      </Sequence>
+
+      {/* 48–57s: native synchronized closing, including the full spoken line. */}
+      <Sequence from={1440} durationInFrames={270}>
+        <FullFrameTake file="closing-take.mp4" endAt={270} />
+      </Sequence>
+
+      <Sequence from={1710} durationInFrames={90}>
+        <EndCard />
+      </Sequence>
+
+      <Audio src={staticFile('intro/audio/music-bed.wav')} volume={0.075} />
+    </AbsoluteFill>
+  );
 }

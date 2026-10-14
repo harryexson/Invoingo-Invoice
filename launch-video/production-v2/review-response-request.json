@@ -1,0 +1,7 @@
+{
+  "name": "review-response",
+  "status": "prepared",
+  "jobId": null,
+  "parameters": {"durationSeconds":15,"aspectRatio":"16:9","resolution":"720p","audio":true,"multiShot":false,"enhance":true,"creditsQuoted":30,"characterElement":"@Cheryl-elements","officeReferenceAsset":"729f92bb-747a-4e60-99fd-31892b167421"},
+  "promptFile":"production-v2/review-response-prompt.txt"
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "file": "cheryl-intro.wav",
+    "text": "Hi, I'm Cheryl Clark. Here's how I use QuickSend and Qbot to stay on top of invoices from my phone.",
+    "voice": "Kokoro af_heart",
+    "speed": 1.13,
+    "durationSeconds": 6.088,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "cheryl-question.wav",
+    "text": "Qbot, which invoices need attention? Prepare a friendly reminder for Tom Becker, and leave it for me to review.",
+    "voice": "Kokoro af_heart",
+    "speed": 1.13,
+    "durationSeconds": 6.491,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "qbot-overview.wav",
+    "text": "You're owed four thousand, one hundred seventy-one dollars and ninety-four cents across four invoices. Two are overdue, totaling two thousand, one hundred fifty dollars. Tom Becker's invoice I N V zero zero three nine for one thousand, one hundred fifty dollars is overdue and has been opened twice. I drafted a friendly reminder for your review. I won't send anything until you approve.",
+    "voice": "Kokoro af_sarah",
+    "speed": 1.2,
+    "durationSeconds": 20.157,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "qbot-paid.wav",
+    "text": "Nair Dental's invoice I N V zero zero four one is paid: two thousand, eight hundred sixty dollars and fifty cents by card. The payout was September thirtieth.",
+    "voice": "Kokoro af_sarah",
+    "speed": 1.2,
+    "durationSeconds": 9.508,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "qbot-draft.wav",
+    "text": "The draft is ready for you to review. You can edit it, or approve it when you're ready.",
+    "voice": "Kokoro af_sarah",
+    "speed": 1.2,
+    "durationSeconds": 4.064,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "cheryl-close.wav",
+    "text": "QuickSend. Clear invoice updates and follow-ups, right on your phone.",
+    "voice": "Kokoro af_heart",
+    "speed": 1.13,
+    "durationSeconds": 3.871,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  }
+]

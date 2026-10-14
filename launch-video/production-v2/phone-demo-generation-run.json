@@ -1,0 +1,163 @@
+{
+  "run": "phone-led-revision",
+  "createdAtUtc": "2026-10-12T22:27:12Z",
+  "model": "Kling 3.0",
+  "clips": [
+    {
+      "name": "office-entrance+introduction",
+      "status": "completed",
+      "jobId": "664486b2-23a7-46a8-8c3a-ae01fcb92fd0",
+      "jobIdNote": "Higgsfield history card now shows media asset ID 664486b2-23a7-46a8-8c3a-ae01fcb92fd0. Exact parameters remain as recorded.",
+      "parameters": {
+        "durationSeconds": 15,
+        "aspectRatio": "16:9",
+        "resolution": "720p",
+        "audio": true,
+        "multiShot": false,
+        "enhance": true,
+        "creditsQuoted": 30,
+        "characterElement": "@Cheryl-elements",
+        "officeReferenceAsset": "729f92bb-747a-4e60-99fd-31892b167421"
+      },
+      "prompt": "@Cheryl-elements: use the saved Cheryl identity reference for her face, short natural black curls, warm medium-brown skin, and forest-green pantsuit with ivory top and gold hoop earrings. Use the attached office image as the exact setting: warm wood desk, dark shelves with books, plants, framed art, a large window, and soft daylight. Create one continuous 15-second, 16:9, 720p photorealistic documentary shot with native synchronized speech. Eye-level camera, subtle push-in, natural quiet breathing and relaxed expressions. Timing: 0–3 seconds, Cheryl walks in from the right carrying her phone toward the desk chair; 3–5 seconds, she pulls the same chair back and sits with realistic balance and chair contact; 5–6 seconds, she settles and holds the phone securely with its screen dark; 6–15 seconds, she looks to camera, glances briefly at her phone, and says exactly: ‘Hi, I’m Cheryl Clark, Product at Invoingo. Let me show you how I use MioBot from my phone.’ Say it in a warm, natural conversational voice with accurate lip sync; pronounce Invoingo ‘in-voyn-go.’ No sighs, gasps, panting, heavy exhalations, added dialogue, music, captions, logos, cuts, identity drift, wardrobe changes, malformed hands, teleporting, or impossible chair movement. Keep the phone screen blank for actual app UI compositing."
+    },
+    {
+      "name": "miobot-question",
+      "status": "completed",
+      "jobId": "1d131d75-bd13-48f0-9d93-3bdb355bc74a",
+      "parameters": {
+        "durationSeconds": 15,
+        "aspectRatio": "16:9",
+        "resolution": "720p",
+        "audio": true,
+        "multiShot": false,
+        "enhance": true,
+        "creditsQuoted": 30,
+        "characterElement": "@Cheryl-elements",
+        "officeReferenceAsset": "729f92bb-747a-4e60-99fd-31892b167421"
+      },
+      "prompt": "@Cheryl-elements: use the saved Cheryl identity for the same woman, short natural black curls, warm medium-brown skin, forest-green pantsuit, ivory top, and gold hoop earrings. Use the attached warm home-office image as the consistent location. One continuous 15-second 16:9 720p medium documentary shot with native female speech and accurate natural lip sync. Start with Cheryl already seated behind the desk, phone securely in her left hand, screen blank and visible between face and camera. She taps once to open MioBot, looks down to the phone while speaking directly to it, then reads the result with a small confident smile. Keep her face and handset in frame and screen plane steady for later screen replacement. Say exactly: “Mio, which invoice still needs a follow-up? What's left on Maya Chen's INV-1043? Prepare a friendly reminder for her. I'll review it before sending.” Speak conversationally with clear pauses and exact words; pronounce names and invoice numbers clearly. Quiet even breathing only. No audible MioBot, desktop display, external screen, floating phone, sighs, gasps, panting, extra dialogue, music, captions, text, logos, cuts, face/wardrobe drift, malformed hands, or phone movement that hides the screen.",
+      "jobIdNote": "Completed output asset ID from Higgsfield history; downloaded to public/intro/videos/miobot-question-take.mp4."
+    },
+    {
+      "name": "phone-in-hand",
+      "status": "completed_rejected",
+      "jobId": null,
+      "outputAssetId": "61493dd2-bd8d-4930-abec-5b1ff6fe4b45",
+      "parameters": {
+        "durationSeconds": 8,
+        "aspectRatio": "16:9",
+        "resolution": "720p",
+        "audio": false,
+        "model": "Grok Imagine 1.5 Lite",
+        "creditsQuoted": 8,
+        "officeReferenceAsset": "729f92bb-747a-4e60-99fd-31892b167421"
+      },
+      "prompt": "One continuous 8-second 16:9 720p photorealistic product-film close-up in the attached warm home office. Show Cheryl Clark’s forest-green sleeve and one natural hand securely holding a modern unbranded smartphone above the warm wood desk. No face required. Keep the entire phone screen plane visible, nearly square to camera, unobstructed and stable throughout, with a completely blank dark screen for later compositing of the real Invoingo interface. Allow only tiny natural hand movement. Quiet room tone; no speech, music, text, logos, other device, cuts, extra fingers, distorted hands, or reflections hiding the screen. Preserve realistic skin, nails, phone proportions, and contact shadows.",
+      "jobIdNote": "Output previewed in Higgsfield. It turns the handset away and exposes its back; rejected for screen compositing."
+    },
+    {
+      "name": "phone-in-hand-screen-forward-retry",
+      "status": "completed_asset_ready",
+      "jobId": null,
+      "acceptedAtLocal": "2026-10-13",
+      "outputAssetId": "6685006b-36d3-4685-8bb6-68fcb898eb80",
+      "parameters": {
+        "durationSeconds": 8,
+        "aspectRatio": "auto",
+        "resolution": "720p",
+        "audio": false,
+        "model": "Grok Imagine 1.5 Lite",
+        "creditsQuoted": 8,
+        "creditsAuthorized": true,
+        "inputImageAssetId": "6af2c9fe-492e-420b-b264-f20a74900e88"
+      },
+      "prompt": "Use the attached image as the exact first frame and preserve it. Generate one continuous silent 8-second 16:9 720p cinematic close-up in the same warm office. Cheryl’s forest-green-sleeved hand holds one vertical smartphone close to camera. The FRONT glass display with its top notch must face the camera and remain directly visible, flat, fully inside the frame, and in the exact same orientation for all 8 seconds. Keep the phone nearly motionless; allow only tiny natural hand movement and a very slow camera push-in. Do not rotate, flip, tilt or turn the phone at any point. Never show the rear of the phone. No Apple logo, no brand mark. Keep the display completely blank, uniform dark glass, with no content, reflections or glare so I can composite the real app screen. Keep hand anatomy natural and contact stable. Background softly blurred. No other devices, no laptop, no desk screen, no face, no cuts, no text, no speech, no music, no captions or watermark.",
+      "jobIdNote": "Higgsfield History shows the completed output asset 6685006b-36d3-4685-8bb6-68fcb898eb80. Previewed at 4.6 seconds: the phone still faces forward. Download has been triggered; local file path is not yet verified."
+    },
+    {
+      "name": "seated-introduction",
+      "status": "completed_downloaded",
+      "jobId": null,
+      "outputAssetId": "4c2a8653-0a98-426c-a94f-5df1c1fd94fb",
+      "parameters": {
+        "durationSeconds": 15,
+        "aspectRatio": "16:9",
+        "resolution": "720p",
+        "audio": true,
+        "multiShot": false,
+        "enhance": true,
+        "creditsQuoted": 30,
+        "characterElement": "@Cheryl-elements",
+        "officeReferenceAsset": "729f92bb-747a-4e60-99fd-31892b167421"
+      },
+      "promptFile": "production-v2/seated-intro-prompt.txt",
+      "jobIdNote": "Downloaded to public/intro/videos/seated-introduction-take.mp4. Higgsfield output asset ID is 4c2a8653-0a98-426c-a94f-5df1c1fd94fb."
+    },
+    {
+      "name": "review-response",
+      "status": "completed_downloaded_excluded",
+      "jobId": null,
+      "outputAssetId": "dea901bc-2d61-4173-a93c-e9c8c8d027bf",
+      "parameters": {
+        "durationSeconds": 15,
+        "aspectRatio": "16:9",
+        "resolution": "720p",
+        "audio": true,
+        "multiShot": false,
+        "enhance": true,
+        "creditsQuoted": 30,
+        "characterElement": "@Cheryl-elements",
+        "officeReferenceAsset": "729f92bb-747a-4e60-99fd-31892b167421"
+      },
+      "promptFile": "production-v2/review-response-prompt.txt",
+      "jobIdNote": "Downloaded to public/intro/videos/review-response-take.mp4. Excluded from final composition because its speech reads invoice statuses."
+    },
+    {
+      "name": "closing",
+      "status": "completed_downloaded",
+      "jobId": null,
+      "outputAssetId": "9b5cc28c-b4a1-4f00-9632-f8960869fc70",
+      "parameters": {
+        "durationSeconds": 15,
+        "aspectRatio": "16:9",
+        "resolution": "720p",
+        "audio": true,
+        "multiShot": false,
+        "enhance": true,
+        "creditsQuoted": 30,
+        "characterElement": "@Cheryl-elements",
+        "officeReferenceAsset": "729f92bb-747a-4e60-99fd-31892b167421"
+      },
+      "promptFile": "production-v2/closing-prompt.txt",
+      "jobIdNote": "Downloaded to public/intro/videos/closing-take.mp4."
+    }
+  ],
+  "finalComposition": {
+    "compositionId": "InvoingoIntro",
+    "durationSeconds": 60,
+    "durationInFrames": 1800,
+    "fps": 30,
+    "resolution": "1920x1080",
+    "draftPath": "dist/invoingo-intro-phone-draft.mp4",
+    "finalPath": "dist/invoingo-intro-phone-60s.mp4",
+    "renderStatus": "blocked-low-memory",
+    "renderNote": "Remotion opens its bundled headless browser but then fails during bundle startup. Available memory was 216 MiB before launch and 55 MiB immediately before failure."
+  },
+  "miobotVoice": {
+    "engine": "Kokoro 82M ONNX",
+    "voice": "af_sarah",
+    "maya": {
+      "file": "public/intro/audio/miobot-maya-response.wav",
+      "durationSeconds": 9.267,
+      "startSeconds": 31,
+      "screen": "current-miobot-draft"
+    },
+    "alex": {
+      "file": "public/intro/audio/miobot-alex-response.wav",
+      "durationSeconds": 7.508,
+      "startSeconds": 40.267,
+      "screen": "current-miobot-alex"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Screenshot-to-build coverage
 
-The supplied QuickSend screenshots are the workflow reference; Invoingo keeps its own identity and fictional sample business. The mobile studio contains a live 22-screen phone gallery and 22 linked screens in both iOS and Android frames. These are responsive web previews, not compiled native binaries.
+The supplied QuickSend prototype is the workflow reference; Invoingo keeps its own identity and fictional sample business. The mobile studio contains a live 27-screen phone gallery and linked screens in both iOS and Android frames. These are responsive web previews, not compiled native binaries.
 
 | Screens | Implemented behavior |
 |---|---|
@@ -19,13 +19,19 @@ The supplied QuickSend screenshots are the workflow reference; Invoingo keeps it
 | 20 Expenses | Record expense with image receipt upload or device-camera capture |
 | 21 Account & settings | Business links, compact lists, local reminder prompts and JSON backup |
 | 22 Connections | Stripe/Resend configuration status, operator token, test-only setup |
+| 23 MioBot | Invoice questions, conversation history, collection snapshots, reminder drafts and activity |
+| 24 Voice mode | Browser speech recognition for questions and spoken MioBot responses where supported |
+| 25 In-app nudges | Current-record prompts for overdue invoices, accepted estimates, opened invoices and unsent drafts |
+| 26 Payment alerts | Verified payment activity and optional browser notifications while the workspace is open |
+| 27 MioBot settings | Per-event prompts, summaries, voice responses and approval preferences |
 
-Wise-inspired elements: forest #163300, lime #9fe870, mist #e2f6d5 and fog #e8ebe6; local Inter fonts with weight 900 display type; strong uppercase display headings; rounded primary actions; dark green summary cards; one primary action per form. The independent Invoingo landing page includes an AI-generated workshop image, custom 20-second motion film, animated invoice preview, interactive industries and access to all 22 screens.
+Wise-inspired elements: forest #163300, lime #9fe870, mist #e2f6d5 and fog #e8ebe6; local Inter fonts with weight 900 display type; strong uppercase display headings; rounded primary actions; dark green summary cards; one primary action per form. The independent Invoingo landing page includes an AI-generated workshop image, custom 20-second motion film, animated invoice preview and interactive industries.
 
 ## Explicit remaining work
 
 - Native iOS/Android packaging, signing, device testing, App Store/Play distribution; current platform switches preview device frames only.
 - Provider accounts/keys, verified Resend domain, public HTTPS deployment and provider end-to-end testing.
+- Background/lock-screen push delivery; current payment notifications require an open, connected browser session and browser permission.
 - Receipt OCR (image capture is implemented), verified e-signatures (typed display signature only), in-person NFC Tap to Pay (hosted wallets are different).
 - Subscription prices/billing, scheduled reminders, multi-user authentication and cloud synchronization.
 - Direct binary PDF generation; current PDF output uses browser printing. Invoice QR codes are generated locally on the server.

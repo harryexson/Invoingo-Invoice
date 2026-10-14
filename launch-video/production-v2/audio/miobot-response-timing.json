@@ -1,0 +1,20 @@
+[
+  {
+    "file": "miobot-maya-response.wav",
+    "text": "Maya Chen's invoice I N V, one zero four three, has six hundred eighty-one dollars and ninety-four cents outstanding, due October nineteenth, twenty twenty-six. The reminder is drafted for review; nothing is sent.",
+    "voice": "Kokoro af_sarah",
+    "speed": 1.35,
+    "durationSeconds": 9.267,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  },
+  {
+    "file": "miobot-alex-response.wav",
+    "text": "Alex Morgan's invoice I N V, one zero four two, is paid in full: one thousand, three hundred and two dollars. Payment recorded October second, twenty twenty-six.",
+    "voice": "Kokoro af_sarah",
+    "speed": 1.35,
+    "durationSeconds": 7.508,
+    "sampleRate": 24000,
+    "engine": "Kokoro 82M ONNX"
+  }
+]
