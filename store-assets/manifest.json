@@ -1,0 +1,27 @@
+{
+  "brand": "Invoingo",
+  "source": "Two user-supplied approved brand images",
+  "mark": "AI-assisted extraction of arrow and full-bleed adaptation of supplied sparkle tile",
+  "iconBackground": "Green gradient",
+  "splashBackgroundLight": "#ffffff",
+  "splashBackgroundDark": "#000900",
+  "iosIcon": "ios/AppIcon.appiconset/icon-1024.png",
+  "androidIcon": "android/play-store-icon-512.png",
+  "splashes": [
+    "ios/splash-1170x2532-light.png",
+    "ios/splash-1170x2532-dark.png",
+    "ios/splash-1290x2796-light.png",
+    "ios/splash-1290x2796-dark.png",
+    "ios/splash-1320x2868-light.png",
+    "ios/splash-1320x2868-dark.png",
+    "ios/splash-2048x2732-light.png",
+    "ios/splash-2048x2732-dark.png",
+    "android/splash-1080x1920-light.png",
+    "android/splash-1080x1920-dark.png",
+    "android/splash-1080x2400-light.png",
+    "android/splash-1080x2400-dark.png",
+    "android/splash-1440x3200-light.png",
+    "android/splash-1440x3200-dark.png"
+  ],
+  "note": "Splash PNGs are visual reference exports. Native iOS launch and Android 12+ system splash are configured through expo-splash-screen. Dark mode is the configured launch treatment; light exports are alternate references."
+}

@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-15",
+  "proposedBundleId": "com.receitra.invoingo",
+  "note": "Copyable configuration specification, not an Apple/Google API import payload. Products have not been created in developer accounts. Confirm app identifiers before creating permanent products.",
+  "free": {
+    "name": "Free",
+    "monthly": 0,
+    "invoiceLimit": 3,
+    "description": "3 invoices per month. Try your workflow before upgrading."
+  },
+  "products": [
+    {
+      "tier": "essentials",
+      "displayName": "Invoingo Essentials Monthly",
+      "status": "PREPARED_NOT_CREATED_IN_STORE",
+      "currency": "USD",
+      "price": 7.99,
+      "period": "monthly",
+      "apple": {
+        "productId": "com.receitra.invoingo.essentials.monthly",
+        "group": "Invoingo Membership",
+        "duration": "ONE_MONTH",
+        "type": "AUTO_RENEWABLE"
+      },
+      "google": {
+        "productId": "invoingo_essentials",
+        "basePlanId": "monthly",
+        "billingPeriod": "P1M",
+        "renewalType": "AUTO_RENEWING"
+      },
+      "revenuecat": {
+        "offering": "essentials",
+        "package": "$rc_monthly",
+        "entitlements": [
+          "essentials"
+        ]
+      },
+      "benefits": [
+        "20 invoices per month",
+        "Estimates, clients and saved items",
+        "45 industry starter catalogs",
+        "PDFs, sharing and payment tracking"
+      ]
+    },
+    {
+      "tier": "essentials",
+      "displayName": "Invoingo Essentials Annual",
+      "status": "PREPARED_NOT_CREATED_IN_STORE",
+      "currency": "USD",
+      "price": 79.99,
+      "period": "annual",
+      "apple": {
+        "productId": "com.receitra.invoingo.essentials.annual",
+        "group": "Invoingo Membership",
+        "duration": "ONE_YEAR",
+        "type": "AUTO_RENEWABLE"
+      },
+      "google": {
+        "productId": "invoingo_essentials",
+        "basePlanId": "annual",
+        "billingPeriod": "P1Y",
+        "renewalType": "AUTO_RENEWING"
+      },
+      "revenuecat": {
+        "offering": "essentials",
+        "package": "$rc_annual",
+        "entitlements": [
+          "essentials"
+        ]
+      },
+      "benefits": [
+        "20 invoices per month",
+        "Estimates, clients and saved items",
+        "45 industry starter catalogs",
+        "PDFs, sharing and payment tracking"
+      ]
+    },
+    {
+      "tier": "plus",
+      "displayName": "Invoingo Plus Monthly",
+      "status": "PREPARED_NOT_CREATED_IN_STORE",
+      "currency": "USD",
+      "price": 12.99,
+      "period": "monthly",
+      "apple": {
+        "productId": "com.receitra.invoingo.plus.monthly",
+        "group": "Invoingo Membership",
+        "duration": "ONE_MONTH",
+        "type": "AUTO_RENEWABLE"
+      },
+      "google": {
+        "productId": "invoingo_plus",
+        "basePlanId": "monthly",
+        "billingPeriod": "P1M",
+        "renewalType": "AUTO_RENEWING"
+      },
+      "revenuecat": {
+        "offering": "plus",
+        "package": "$rc_monthly",
+        "entitlements": [
+          "essentials",
+          "plus"
+        ]
+      },
+      "benefits": [
+        "Unlimited invoices and estimates",
+        "Everything in Essentials",
+        "Expenses, reports and CSV exports",
+        "MioBot invoice queries and reminder drafts"
+      ]
+    },
+    {
+      "tier": "plus",
+      "displayName": "Invoingo Plus Annual",
+      "status": "PREPARED_NOT_CREATED_IN_STORE",
+      "currency": "USD",
+      "price": 129.99,
+      "period": "annual",
+      "apple": {
+        "productId": "com.receitra.invoingo.plus.annual",
+        "group": "Invoingo Membership",
+        "duration": "ONE_YEAR",
+        "type": "AUTO_RENEWABLE"
+      },
+      "google": {
+        "productId": "invoingo_plus",
+        "basePlanId": "annual",
+        "billingPeriod": "P1Y",
+        "renewalType": "AUTO_RENEWING"
+      },
+      "revenuecat": {
+        "offering": "plus",
+        "package": "$rc_annual",
+        "entitlements": [
+          "essentials",
+          "plus"
+        ]
+      },
+      "benefits": [
+        "Unlimited invoices and estimates",
+        "Everything in Essentials",
+        "Expenses, reports and CSV exports",
+        "MioBot invoice queries and reminder drafts"
+      ]
+    },
+    {
+      "tier": "premium",
+      "displayName": "Invoingo Premium Monthly",
+      "status": "DRAFT_DO_NOT_ACTIVATE",
+      "currency": "USD",
+      "price": 19.99,
+      "period": "monthly",
+      "apple": {
+        "productId": "com.receitra.invoingo.premium.monthly",
+        "group": "Invoingo Membership",
+        "duration": "ONE_MONTH",
+        "type": "AUTO_RENEWABLE"
+      },
+      "google": {
+        "productId": "invoingo_premium",
+        "basePlanId": "monthly",
+        "billingPeriod": "P1M",
+        "renewalType": "AUTO_RENEWING"
+      },
+      "revenuecat": {
+        "offering": "premium",
+        "package": "$rc_monthly",
+        "entitlements": [
+          "essentials",
+          "plus",
+          "premium"
+        ]
+      },
+      "benefits": [
+        "Everything in Plus",
+        "Planned: expanded AI allowance",
+        "Planned: advanced collection workflows"
+      ]
+    },
+    {
+      "tier": "premium",
+      "displayName": "Invoingo Premium Annual",
+      "status": "DRAFT_DO_NOT_ACTIVATE",
+      "currency": "USD",
+      "price": 199.99,
+      "period": "annual",
+      "apple": {
+        "productId": "com.receitra.invoingo.premium.annual",
+        "group": "Invoingo Membership",
+        "duration": "ONE_YEAR",
+        "type": "AUTO_RENEWABLE"
+      },
+      "google": {
+        "productId": "invoingo_premium",
+        "basePlanId": "annual",
+        "billingPeriod": "P1Y",
+        "renewalType": "AUTO_RENEWING"
+      },
+      "revenuecat": {
+        "offering": "premium",
+        "package": "$rc_annual",
+        "entitlements": [
+          "essentials",
+          "plus",
+          "premium"
+        ]
+      },
+      "benefits": [
+        "Everything in Plus",
+        "Planned: expanded AI allowance",
+        "Planned: advanced collection workflows"
+      ]
+    }
+  ]
+}

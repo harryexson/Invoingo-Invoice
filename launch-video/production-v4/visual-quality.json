@@ -1,0 +1,9 @@
+{
+  "fullFilmPhoneFootageReady": false,
+  "rejectedSource": "phone-motion-v4.mp4",
+  "reason": "User rejected the enlarged, shaky screenshot composite as unconvincing. Replace all phone scenes before full-film export.",
+  "replacementTest": "dist/invoingo-phone-closeup-v5-review.mp4",
+  "replacementSource": "public/intro/videos/phone-closeup-source-v5.mp4",
+  "mobileCapture": "public/intro/videos/mobile-live-v5.mp4",
+  "captureNote": "Actual local mobile demo interaction. Fresh October 15 demo shows INV-1043 Open at USD781.94. Earlier saved screenshots show a different partial-payment session; narration and screens must be reconciled before final assembly."
+}

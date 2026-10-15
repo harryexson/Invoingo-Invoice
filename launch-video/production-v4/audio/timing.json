@@ -1,0 +1,50 @@
+[
+  {
+    "file": "cheryl-introduction.wav",
+    "voice": "af_heart",
+    "durationSeconds": 10.133,
+    "text": "Today, we're introducing MioBot, the AI assistant inside Invoingo. It helps you create invoices, keep track of payments, and follow up without the busywork."
+  },
+  {
+    "file": "cheryl-business.wav",
+    "voice": "af_heart",
+    "durationSeconds": 8.075,
+    "text": "Running a business is hard enough without chasing invoices. Just ask MioBot what's been sent, what's been opened, and what's overdue."
+  },
+  {
+    "file": "cheryl-question.wav",
+    "voice": "af_heart",
+    "durationSeconds": 1.831,
+    "text": "Mio, what needs a follow-up?"
+  },
+  {
+    "file": "miobot-maya.wav",
+    "voice": "af_sarah",
+    "durationSeconds": 11.093,
+    "text": "Maya Chen's I N V one zero four three is partially paid, with six hundred eighty-one dollars and ninety-four cents remaining. Your reminder draft is ready for review; nothing was sent."
+  },
+  {
+    "file": "cheryl-reminder.wav",
+    "voice": "af_heart",
+    "durationSeconds": 5.365,
+    "text": "When a payment is late, MioBot can prepare a friendly follow-up. You review it and tap Send."
+  },
+  {
+    "file": "miobot-alex.wav",
+    "voice": "af_sarah",
+    "durationSeconds": 6.463,
+    "text": "Alex Morgan's I N V one zero four two is paid in full: one thousand, three hundred and two dollars."
+  },
+  {
+    "file": "cheryl-paid-update.wav",
+    "voice": "af_heart",
+    "durationSeconds": 3.209,
+    "text": "And when your customer pays, Invoingo keeps you in the loop."
+  },
+  {
+    "file": "cheryl-less-time.wav",
+    "voice": "af_heart",
+    "durationSeconds": 3.326,
+    "text": "Less time on invoices. More time growing your business."
+  }
+]

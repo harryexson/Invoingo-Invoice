@@ -5,7 +5,11 @@ const interfaces = Object.entries(os.networkInterfaces()).sort(([a],[b]) => Numb
 const address = interfaces.filter(([name]) => !/virtual|vpn|loopback|vEthernet/i.test(name)).flatMap(([,entries]) => entries || []).find(item => item.family === 'IPv4' && !item.internal && !item.address.startsWith('169.254.'))?.address;
 if (!address) throw Error('Connect this computer to Wi-Fi or Ethernet to start a device preview.');
 process.env.PREVIEW_HOST = '0.0.0.0';
-fs.writeFileSync(path.join(__dirname,'expo-preview','.env'),`EXPO_PUBLIC_PREVIEW_URL=http://${address}:4185\n`);
+const envPath=path.join(__dirname,'expo-preview','.env');
+const existingEnv=fs.existsSync(envPath)?fs.readFileSync(envPath,'utf8'):'';
+const previewLine=`EXPO_PUBLIC_PREVIEW_URL=http://${address}:4185`;
+const nextEnv=/^EXPO_PUBLIC_PREVIEW_URL=.*$/m.test(existingEnv)?existingEnv.replace(/^EXPO_PUBLIC_PREVIEW_URL=.*$/m,previewLine):existingEnv+(existingEnv&&!existingEnv.endsWith('\n')?'\n':'')+previewLine+'\n';
+fs.writeFileSync(envPath,nextEnv);
 const qr=require('qrcode-generator')(0,'M');qr.addData(`exp://${address}:8081`);qr.make();
 fs.writeFileSync(path.join(__dirname,'landing','assets','expo-qr.gif'),Buffer.from(qr.createDataURL(5,10).split(',')[1],'base64'));
 console.log(`Phone preview (same Wi-Fi): http://${address}:4185/mobile.html?embedded=1#welcome`);

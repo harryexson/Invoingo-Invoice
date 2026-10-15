@@ -10,6 +10,8 @@
     "intro:render": "node tools/check-intro-assets.cjs && remotion render src/index.ts InvoingoIntro dist/invoingo-intro-phone-60s.mp4 --codec=h264 --crf=17 --concurrency=2",
     "intro:integrated:draft": "node tools/check-integrated-intro.cjs && remotion render src/index.ts InvoingoIntroIntegrated dist/invoingo-intro-integrated-draft.mp4 --scale=0.5 --codec=h264 --concurrency=2",
     "intro:integrated:render": "node tools/check-integrated-intro.cjs && remotion render src/index.ts InvoingoIntroIntegrated dist/invoingo-intro-integrated-57s.mp4 --codec=h264 --crf=17 --concurrency=2",
+    "intro:v4:draft": "node tools/check-intro-v4-assets.cjs && remotion render src/index.ts InvoingoIntroV4 dist/invoingo-intro-v4-draft.mp4 --scale=0.5 --codec=h264 --concurrency=2",
+    "intro:v4:render": "node tools/check-intro-v4-assets.cjs && remotion render src/index.ts InvoingoIntroV4 dist/invoingo-intro-v4-60s.mp4 --codec=h264 --crf=17 --concurrency=2",
     "quicksend:draft": "remotion render src/index.ts QuickSendIntro dist/quicksend-qbot-launch-60s-draft.mp4 --scale=0.5 --codec=h264 --concurrency=2",
     "quicksend:render": "remotion render src/index.ts QuickSendIntro dist/quicksend-qbot-launch-60s.mp4 --codec=h264 --crf=17 --concurrency=2"
   },

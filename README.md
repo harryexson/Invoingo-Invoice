@@ -55,3 +55,12 @@ See [FEATURE-COVERAGE.md](FEATURE-COVERAGE.md) for screenshot coverage and remai
 ## Updated campaign & Expo Go preview
 
 The landing at port 4185 includes a 20-second original motion film, generated editorial image, animated hero and live iOS/Android workflow screens. Run `npm run preview:phone` for same-Wi-Fi device access (stop the existing 4185 server first), then `npm run preview:expo` in another terminal. Open http://127.0.0.1:4185/expo.html to scan the Expo Go QR. See expo-preview/README.md for scope and device testing instructions.
+
+
+## Updated brand and store preparation
+
+Open `http://127.0.0.1:4185/store-assets.html` for the icon/splash gallery and downloadable ZIP. The supplied wordmark is shared by the landing page, desktop workspace, payment page, mobile studio and Expo shell. The second supplied sparkle identity is configured for native icons and dark launch screens.
+
+See [MONETIZATION.md](MONETIZATION.md) for the proposed Free/Essentials/Plus tiers, reserved Premium pricing, researched competitors, store product IDs and RevenueCat setup. Store products have not been created in external accounts. Production account entitlements and invoice quota enforcement are still required before paid release.
+
+Run `node tools/prepare-monetization.cjs` to rebuild the copyable product catalog from `subscriptions.js`. With the Expo dependencies installed, run `node tools/verify-subscriptions.cjs` for isolated billing contract checks; no real store purchases are made. Native checks: `npm run lint` and `npm run typecheck` inside `expo-preview`.

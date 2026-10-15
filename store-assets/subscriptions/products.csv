@@ -1,0 +1,7 @@
+tier,period,price_usd,apple_product_id,google_product_id,google_base_plan,revenuecat_offering,revenuecat_package,status
+essentials,monthly,7.99,com.receitra.invoingo.essentials.monthly,invoingo_essentials,monthly,essentials,$rc_monthly,PREPARED_NOT_CREATED_IN_STORE
+essentials,annual,79.99,com.receitra.invoingo.essentials.annual,invoingo_essentials,annual,essentials,$rc_annual,PREPARED_NOT_CREATED_IN_STORE
+plus,monthly,12.99,com.receitra.invoingo.plus.monthly,invoingo_plus,monthly,plus,$rc_monthly,PREPARED_NOT_CREATED_IN_STORE
+plus,annual,129.99,com.receitra.invoingo.plus.annual,invoingo_plus,annual,plus,$rc_annual,PREPARED_NOT_CREATED_IN_STORE
+premium,monthly,19.99,com.receitra.invoingo.premium.monthly,invoingo_premium,monthly,premium,$rc_monthly,DRAFT_DO_NOT_ACTIVATE
+premium,annual,199.99,com.receitra.invoingo.premium.annual,invoingo_premium,annual,premium,$rc_annual,DRAFT_DO_NOT_ACTIVATE

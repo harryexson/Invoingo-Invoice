@@ -21,6 +21,7 @@ brag-output/previous-landing-film.mp4
 
 launch-video/node_modules/
 launch-video/dist/
+launch-video/build/
 dist/
 
 # Local render/browser state and credentials

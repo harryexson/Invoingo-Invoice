@@ -1,0 +1,15 @@
+{
+  "request_id": "b7ede8c5-7aeb-49a4-ad07-8fb079f4a002",
+  "status": "awaiting_provider_user_confirmation",
+  "model": "kling3_0",
+  "durationSeconds": 10,
+  "aspectRatio": "16:9",
+  "resolution": "720p",
+  "audio": true,
+  "enhance": false,
+  "creditsQuoted": 20,
+  "characterElementId": "580a365b-5782-4469-9054-c355fc9678cd",
+  "officeReferenceAsset": "729f92bb-747a-4e60-99fd-31892b167421",
+  "promptSource": "NATIVE-TAKE-PROMPTS.md",
+  "jobId": null
+}
