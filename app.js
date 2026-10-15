@@ -3,7 +3,7 @@ const $=s=>document.querySelector(s), B=Business, KEY='invoigo-workspace-v1';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
 const addDays=(date,n)=>{const d=new Date(date+'T12:00:00');d.setDate(d.getDate()+n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
-const uid=()=>crypto.randomUUID();
+const uid=()=>Business.createId();
 function initial(){return {version:1,settings:{name:'Your business',email:'',phone:'',address:'',currency:'USD',tax:0,terms:14,note:'Thank you for your business.',instructions:'',industry:'',industries:[],customIndustry:''},clients:[],invoices:[],estimates:[],expenses:[],services:[],nextInvoice:1001,nextEstimate:101};}
 let db=initial(),storageError='';try{const raw=localStorage.getItem(KEY);if(raw){const parsed=JSON.parse(raw);if(parsed.version!==1||!['clients','invoices','estimates','expenses','services'].every(k=>Array.isArray(parsed[k]))||!parsed.settings)throw Error('Invalid saved data');validateBackup(parsed);db=parsed;}}catch(e){storageError='Saved data could not be loaded. Export or recover your browser data before making changes.';}
 let persisted=JSON.stringify(db);

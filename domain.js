@@ -2,6 +2,20 @@
 (function(root){
  const Catalog=typeof module!=='undefined'?require('./catalog'):root.Catalog;
  const round=n=>Math.round((n+Number.EPSILON)*100)/100;
+ let localIdSequence=0;
+ // LAN HTTP WebViews can expose getRandomValues without the secure-context randomUUID API.
+ // These are record identifiers, never authentication tokens or payment-link secrets.
+ function createId(){
+  const crypto=root.crypto;
+  if(typeof crypto?.randomUUID==='function')return crypto.randomUUID();
+  if(typeof crypto?.getRandomValues==='function'){
+   const bytes=crypto.getRandomValues(new Uint8Array(16));
+   bytes[6]=(bytes[6]&15)|64;bytes[8]=(bytes[8]&63)|128;
+   const hex=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+   return `${hex.slice(0,8)}-${hex.slice(8,12)}-${hex.slice(12,16)}-${hex.slice(16,20)}-${hex.slice(20)}`;
+  }
+  return `local-${Date.now().toString(36)}-${(++localIdSequence).toString(36)}-${Math.random().toString(36).slice(2,12)}`;
+ }
  function validDate(value){if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;const d=new Date(value+'T12:00:00Z');return !Number.isNaN(d.valueOf())&&d.toISOString().slice(0,10)===value;}
  function totals(doc){const subtotal=round(doc.items.reduce((s,i)=>s+round(i.qty*i.rate),0));const discount=Math.min(subtotal,Number(doc.discount)||0);const tax=round((subtotal-discount)*(Number(doc.tax)||0)/100);const total=round(subtotal-discount+tax);const paid=round((doc.payments||[]).filter(p=>!p.reversed).reduce((s,p)=>s+p.amount,0));return {subtotal,discount,tax,total,paid,balance:round(total-paid)};}
  function status(doc,today){if(doc.status==='Void'||doc.status==='Draft')return doc.status;const t=totals(doc);if(t.balance<=0)return 'Paid';if(doc.due<today)return 'Overdue';if(t.paid>0)return 'Partial';return 'Open';}
@@ -11,5 +25,5 @@
 function validateBackup(v){const bad=()=>{throw Error('This is not a valid Invoingo backup.');};if(v.version!==1||!v.settings||!['clients','invoices','estimates','expenses','services'].every(k=>Array.isArray(v[k]))||!['USD','EUR','GBP','CAD','AUD'].includes(v.settings.currency))bad();for(const key of ['name','email','phone','address','note','instructions'])if(typeof v.settings[key]!=='string')bad();if(!Number.isFinite(v.settings.tax)||v.settings.tax<0||v.settings.tax>100||!Number.isInteger(v.settings.terms)||v.settings.terms<0||v.settings.terms>365)bad();for(const kind of ['clients','invoices','estimates','expenses','services']){const ids=new Set();for(const record of v[kind]){if(typeof record.id!=='string'||!/^[a-zA-Z0-9-]+$/.test(record.id)||ids.has(record.id))bad();ids.add(record.id);}}
 for(const c of v.clients)if(!['name','email','phone','address'].every(k=>typeof c[k]==='string'))bad();for(const kind of ['invoices','estimates']){const nums=new Set();for(const d of v[kind]){if(!Number.isInteger(d.number)||nums.has(d.number)||!v.clients.some(c=>c.id===d.clientId)||!Array.isArray(d.items)||!Array.isArray(d.payments)||!Array.isArray(d.activity)||typeof d.note!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(d.date)||!/^\d{4}-\d{2}-\d{2}$/.test(d.due))bad();nums.add(d.number);validate(d);if(d.activity.some(a=>typeof a.text!=='string'||typeof a.date!=='string'))bad();for(const snapshot of [d.clientSnapshot,d.businessSnapshot])if(snapshot&&typeof snapshot.name!=='string')bad();if(!(kind==='invoices'?['Draft','Open','Void']:['Draft','Sent','Accepted','Declined','Converted']).includes(d.status))bad();if(d.payments.some(p=>!Number.isFinite(p.amount)||p.amount<=0||!validDate(p.date)||p.date<d.date||p.amount!==round(p.amount)||typeof p.method!=='string'||typeof p.id!=='string'||!/^[a-zA-Z0-9-]+$/.test(p.id)||(p.reversed!==undefined&&typeof p.reversed!=='boolean'))||totals(d).balance<0||new Set(d.payments.map(p=>p.id)).size!==d.payments.length||((kind==='estimates'||d.status==='Draft')&&d.payments.length)||(d.status==='Void'&&d.payments.some(p=>!p.reversed)))bad();}const counter=kind==='invoices'?v.nextInvoice:v.nextEstimate;if(!Number.isInteger(counter)||counter<=Math.max(0,...nums))bad();}
 for(const e of v.expenses){if(typeof e.name!=='string'||typeof e.category!=='string'||typeof e.note!=='string'||!validDate(e.date)||!Number.isFinite(e.amount)||e.amount<=0)bad();if(e.receipt&&(!['image/png','image/jpeg','image/webp','application/pdf'].includes(e.receipt.type)||typeof e.receipt.name!=='string'||typeof e.receipt.data!=='string'||!/^data:(image\/(png|jpeg|webp)|application\/pdf);base64,[A-Za-z0-9+/=]+$/.test(e.receipt.data)))bad();}if(v.settings.industry!==undefined&&(typeof v.settings.industry!=='string'||(v.settings.industry&&!Catalog.get(v.settings.industry))))bad();if(v.settings.industries!==undefined&&(!Array.isArray(v.settings.industries)||v.settings.industries.some(id=>!Catalog.get(id))))bad();if(v.settings.customIndustry!==undefined&&(typeof v.settings.customIndustry!=='string'||v.settings.customIndustry.length>120))bad();for(const s of v.services){if(s.type===undefined){if(typeof s.name!=='string'||typeof s.unit!=='string'||!Number.isFinite(s.rate)||s.rate<0)bad();}else Catalog.validate(s);}}
- const api={validateBackup,round,validDate,totals,status,validate,payment,reversePayment};if(typeof module!=='undefined')module.exports=api;else root.Business=api;
+ const api={createId,validateBackup,round,validDate,totals,status,validate,payment,reversePayment};if(typeof module!=='undefined')module.exports=api;else root.Business=api;
 })(typeof window!=='undefined'?window:globalThis);
