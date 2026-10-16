@@ -36,3 +36,19 @@ The existing Node server uses a single operator token and local persistent files
 The earlier SUPABASE-IONOS-SETUP.md describes backend preparation history; its IONOS deployment steps are superseded by this file. The Supabase migration and Edge Function draft remain undeployed and unfinished.
 
 References: https://vercel.com/docs/plans/hobby and https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions
+
+## Published local-workspace preview — 2026-10-16
+
+At the owner's request, deployment proceeded without Supabase. GitHub main includes commit 41a6be8. Vercel preview dpl_4J2LT8vtTdkuFd4YqyaZ6xPQX1v5 was inspected and reported Ready.
+
+Website: https://invoingo-md00bajst-boldintelligentsolutions-9587-274be8fa.vercel.app/
+
+Local mobile workspace: https://invoingo-md00bajst-boldintelligentsolutions-9587-274be8fa.vercel.app/mobile.html?mode=live#setup
+
+The earlier first deployment was automatically assigned production by Vercel; no custom domain or DNS was changed. The newer deployment above is explicitly a preview. Git integration is not configured; the source was pushed to GitHub and the deployment submitted separately by CLI.
+
+The static build exposes only the allowlisted public output. /api requests receive an explanatory unavailable response via the frontend until cloud services are connected. Local records, reports, manual payments and document sharing use browser storage; cloud identity, automated emails, checkout and live AI service calls are not operational on this deployment. Export backups before changing browsers or devices.
+
+Mobile updates include compact business setup, logo upload, consistent navigation icons, clearer invoice parties and responsive typography. Fixed the client/catalog form id-name collision and added a regression test. Final full-browser walkthrough was blocked by the browser-control tool failing to initialize; do not treat unit checks as full browser or provider end-to-end verification.
+
+Final checks: all 54 application tests passed; cloud migration isolation test passed; Expo TypeScript and lint checks passed. A local disk-full condition initially interrupted gateway tests. Removing only the generated dist/web output freed about 133 MiB, after which the full suite passed. The generated output was already deployed; no source or local financial data was removed. Local disk space remains low.
