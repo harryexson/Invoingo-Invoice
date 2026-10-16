@@ -4,17 +4,27 @@
   "private": true,
   "scripts": {
     "start": "node --use-system-ca server.js",
-    "check": "node --check app.js && node --check domain.js && node --check server.js && node --check wallet.js && node --check catalog.js && node --check catalog-ui.js && node --check mobile.js && node --check enhancements.js && node --check integrations.js && node --check landing/serve.js && node --check landing/script.js && node --check pay.js && node --check landing/campaign.js && node --check phone-preview.cjs && node --check start-expo.cjs && node --check verify-expo.cjs && node --check miobot-core.js && node --check miobot-store.js && node --check identity.js && node --check miobot-server.js && node --check miobot-ui.js && node --check miobot-ai.js",
-    "test": "node --test domain.test.js record-ids.test.js wallet.test.js catalog.test.js integrations.test.js miobot.test.js miobot-ai.test.js miobot-flow.test.js",
+    "check": "node --check app.js && node --check domain.js && node --check server.js && node --check wallet.js && node --check catalog.js && node --check catalog-ui.js && node --check mobile.js && node --check enhancements.js && node --check integrations.js && node --check landing/serve.js && node --check landing/script.js && node --check pay.js && node --check landing/campaign.js && node --check phone-preview.cjs && node --check start-expo.cjs && node --check verify-expo.cjs && node --check miobot-core.js && node --check miobot-store.js && node --check identity.js && node --check miobot-server.js && node --check miobot-ui.js && node --check miobot-ai.js && node --check receipts.js && node --check reporting.js && node --check documents.js && node --check invoice-assistant.js && node --check document-pdf.js && node --check stripe-connect.js",
+    "test": "node --test domain.test.js record-ids.test.js wallet.test.js catalog.test.js integrations.test.js miobot.test.js miobot-ai.test.js miobot-flow.test.js features.test.js stripe-connect.test.js mobile-forms.test.cjs",
     "landing": "node --use-system-ca landing/serve.js",
     "preview:phone": "node --use-system-ca phone-preview.cjs",
     "preview:expo": "node start-expo.cjs",
     "verify:expo": "node verify-expo.cjs",
-    "check:connections": "node --use-system-ca connection-check.cjs --providers"
+    "check:connections": "node --use-system-ca connection-check.cjs --providers",
+    "test:cloud": "node --test cloud-database.test.cjs",
+    "build:cloud-runtime": "node -e \"require('esbuild').buildSync({entryPoints:['cloud-runtime.entry.mjs'],bundle:true,platform:'neutral',format:'esm',outfile:'supabase/functions/invoingo/runtime.mjs'})\"",
+    "build:web": "node build-web.cjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "2.118.0",
+    "pdfkit": "^0.20.2",
     "qrcode-generator": "^2.0.4",
     "resend": "^6.32.0",
     "stripe": "^23.0.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.10",
+    "esbuild": "0.28.2",
+    "supabase": "2.121.0"
   }
 }

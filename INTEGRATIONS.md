@@ -18,3 +18,11 @@ Published invoice records, payment references and email events are stored in `.d
 Provider references: [Stripe Checkout](https://docs.stripe.com/api/checkout/sessions/create), [Stripe webhook verification](https://docs.stripe.com/webhooks/signature), [Resend email API](https://resend.com/docs/api-reference/emails/send-email), [Resend webhook verification](https://resend.com/docs/webhooks/verify-webhooks-requests).
 
 Provider setup can be inspected without printing secret values using `npm run check:connections`. This performs read-only Stripe test-account and Resend domain checks; it sends no emails and creates no payments. Startup scripts use Node’s system CA trust store while keeping TLS certificate verification enabled. Configuration status indicates saved settings; verified webhook delivery still requires an actual signed event.
+
+## Stripe-hosted business payouts (test implementation)
+
+Set STRIPE_CONNECT_ENABLED=true after activating Connect for the platform's Stripe test account. Payment options has hosted onboarding and a readiness check. Stripe collects banking, identity documents and acceptance of its terms on its own website. Invoingo stores the connected account ID, never a bank-account object. The current gateway maps one connected account to its one authenticated local business; do not expose this operator-token gateway as public multi-user signup.
+
+Invoices freeze the server-owned account reference at publication. Checkout uses direct charges with stripeAccount, so the payment belongs to the connected business. Connected-account events must match that reference before a payment is imported. Configure the Stripe webhook endpoint to receive connected-account events as well as the relevant checkout completion and refund/dispute events. Secret presence alone is not verification.
+
+In live workspace, SMS/WhatsApp sharing prepares a payable link when Connect is enabled; the sender still reviews and sends using their device. Automated SMS is not configured. Public HTTPS hosting is required before sharing external payment links. Resend sends the invoice email and PDF after review; verified payments queue receipts. Instant Payouts and payout timing are determined by Stripe; no instant-bank-payout guarantee is made and no payout API is called by this implementation. Live payments remain disabled.

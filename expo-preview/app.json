@@ -21,22 +21,27 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      ["expo-splash-screen", {
-        "backgroundColor": "#000900",
-        "image": "./assets/splash-icon.png",
-        "imageWidth": 160,
-        "resizeMode": "contain",
-        "ios": {
-          "image": "./assets/invoingo-splash-lockup.png",
-          "imageWidth": 300,
-          "backgroundColor": "#000900"
-        },
-        "android": {
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#000900",
           "image": "./assets/splash-icon.png",
           "imageWidth": 160,
-          "backgroundColor": "#000900"
+          "resizeMode": "contain",
+          "ios": {
+            "image": "./assets/invoingo-splash-lockup.png",
+            "imageWidth": 300,
+            "backgroundColor": "#000900"
+          },
+          "android": {
+            "image": "./assets/splash-icon.png",
+            "imageWidth": 160,
+            "backgroundColor": "#000900"
+          }
         }
-      }]
+      ],
+      "expo-sharing",
+      "expo-mail-composer"
     ]
   }
 }

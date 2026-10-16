@@ -23,6 +23,7 @@ launch-video/node_modules/
 launch-video/dist/
 launch-video/build/
 dist/
+.vercel/
 
 # Local render/browser state and credentials
 .render-temp/
@@ -35,3 +36,6 @@ dist/
 *.jks
 *.mobileprovision
 artifacts/higgsfield-media-agreement.jpg
+
+.vercel
+.env*

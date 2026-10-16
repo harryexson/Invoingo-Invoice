@@ -4,7 +4,7 @@ const path = require('node:path');
 const miobotHandler=require('../miobot-server').createMioBotHandler();
 const integrationHandler=require('../integrations').createIntegrationHandler({miobot:miobotHandler});
 const appFiles = new Set(['index.html','app.js','domain.js','wallet.js','catalog.js','catalog-ui.js','styles.css','prototype.html','prototype-app.js','prototype-styles.css','enhancements.js','enhancements.css','mobile.html','mobile.js','mobile.css','pay.html','pay.js','expo.html','miobot-core.js','miobot-ui.js','miobot.css','miobot-responsive-check.html','subscriptions.js','store-assets.html']);
-appFiles.add('brand.css');
+appFiles.add('mobile-refinement.css');appFiles.add('brand.css');appFiles.add('reporting.js');appFiles.add('documents.js');appFiles.add('invoice-assistant.js');
 const pageFiles = new Set(['index.html','styles.css','script.js','campaign.css','campaign.js','launch.html']);
 const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.gif':'image/gif','.mp4':'video/mp4','.ttf':'font/ttf','.vtt':'text/vtt; charset=utf-8'};
 types['.zip']='application/zip';
@@ -23,7 +23,7 @@ const server=http.createServer((req,res)=>{
   }
   if(url==='/app'){res.writeHead(302,{Location:'/app/'});res.end();return;}
   let file;
-  if(url==='/brand.css')file=path.join(__dirname,'..','brand.css');
+  if(['/brand.css','/mobile-refinement.css','/reporting.js','/documents.js','/invoice-assistant.js'].includes(url))file=path.join(__dirname,'..',url.slice(1));
   else if(url.startsWith('/app/landing/assets/')&&/^\/app\/landing\/assets\/[a-zA-Z0-9_-]+\.(ttf|css)$/.test(url))file=path.join(__dirname,'assets',path.basename(url));
   else if(['/mobile.html','/mobile.js','/mobile.css','/domain.js','/pay.html','/pay.js','/expo.html','/miobot-core.js','/miobot-ui.js','/miobot.css','/miobot-responsive-check.html','/subscriptions.js','/store-assets.html'].includes(url))file=path.join(__dirname,'..',url.slice(1));
   else if(url.startsWith('/landing/assets/')&&/^\/landing\/assets\/[a-zA-Z0-9_-]+\.(ttf|css|png|jpg|gif|mp4)$/.test(url))file=path.join(__dirname,'assets',path.basename(url));

@@ -1,0 +1,76 @@
+/* Reference: QuickSend's compact product UI; Invoingo's approved color tokens. */
+@media(min-width:591px){.studio{padding-top:22px}.stage{padding-top:24px}.device{height:min(765px,calc(100dvh - 145px));min-height:560px}.stage-note{top:110px}}
+.phone-app{font-size:14px;line-height:1.45;padding:8px 20px 24px;color:var(--forest)}
+.phone-app h1,.phone-app h2,.phone-app h3{letter-spacing:-.035em;text-wrap:balance}
+.phone-app .m-title{font-size:27px;line-height:1.12;font-weight:800;margin:8px 0 12px;letter-spacing:-.045em}
+.phone-app .m-subtitle{font-size:13px;line-height:1.55;margin-bottom:20px}
+.phone-app .topline{min-height:44px;margin:0 0 20px;gap:8px}
+.topline h2{font-size:16px;font-weight:650;line-height:1.3;text-align:center}
+.topline .round{width:36px;height:36px;background:#f3f5f0;flex:0 0 36px}
+.phone-app label{font-size:12px;line-height:1.4;font-weight:550;margin-bottom:14px}
+.phone-app label input,.phone-app label select,.phone-app label textarea{font-size:16px;line-height:1.35;padding:11px 12px;margin-top:6px;border-color:#d3dbce;border-radius:10px;min-height:44px;box-shadow:0 1px 2px #16330004}
+.phone-app input:focus,.phone-app select:focus,.phone-app textarea:focus{border-color:var(--forest)}
+.phone-app .m-grid2{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.phone-app .m-button{min-height:46px;font-size:14px;line-height:1.3;padding:13px 17px;font-weight:650}
+.phone-app .m-button:active{transform:translateY(1px)}
+.phone-app .m-button:disabled{opacity:.55;cursor:wait}
+.phone-app .m-notice{font-size:12px;line-height:1.6;border-radius:12px;padding:12px 14px;margin:14px 0}
+.phone-app .list-row{gap:10px;padding:16px 0;min-height:68px}
+.phone-app .list-row strong{font-size:14px;line-height:1.35;font-weight:600;overflow-wrap:anywhere}
+.phone-app .list-row small{font-size:11px;line-height:1.45;margin-top:4px;overflow-wrap:anywhere}
+.phone-app .row-end{max-width:45%;font-variant-numeric:tabular-nums}
+.phone-app .row-end strong{font-size:14px}
+.phone-app .avatar{width:38px;height:38px;flex:0 0 38px;font-size:12px}
+.phone-app .filters{gap:6px;flex-wrap:wrap;margin:16px 0}
+.phone-app .filters button{font-size:11px;min-height:36px;padding:8px 11px}
+.phone-app .tag{font-size:10px;line-height:1.2;padding:5px 8px}
+.phone-app .m-card{border-radius:16px;padding:17px;margin:16px 0}
+.phone-app .big-money{font-size:32px;font-weight:750;letter-spacing:-.05em;line-height:1.2;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.phone-app .card-meta{font-size:11px;gap:8px;margin-top:16px}
+.phone-app .m-section-head{margin:24px 0 6px}
+.phone-app .m-section-head h3{font-size:13px;letter-spacing:0;font-weight:650}
+.phone-app .m-section-head a{min-height:36px;display:inline-flex;align-items:center}
+.phone-app .m-total{background:#f6f8f3;border-radius:14px;padding:10px 14px;margin-top:16px}
+.phone-app .m-total>div{font-size:12px;gap:12px;font-variant-numeric:tabular-nums}
+.phone-app .m-total .grand{font-size:20px;line-height:1.3;gap:12px}
+.phone-app .m-total>div>span:last-child{text-align:right;overflow-wrap:anywhere}
+.phone-app .timeline strong{font-size:13px;line-height:1.4}
+.phone-app .timeline small{font-size:11px}
+.phone-app .m-toggle{font-size:13px;gap:16px;min-height:56px}
+.phone-app .m-toggle label{margin:0;font-size:13px;flex:1}
+.m-icon{width:21px;height:21px;display:inline-block;vertical-align:middle;flex:none}
+.bottom-nav{gap:0;padding:9px 5px 17px}
+.bottom-nav a{flex:1;min-width:0;min-height:43px;gap:4px;font-size:9px;line-height:1.2}
+.bottom-nav a>span{height:27px;min-width:44px;display:grid;place-items:center;border-radius:18px}
+.bottom-nav a.active>span{background:var(--mist)}
+.bottom-nav a.active{font-weight:700}
+.setup-progress{display:flex;gap:5px;margin:0 0 18px}
+.setup-progress span{height:3px;flex:1;border-radius:3px;background:var(--border)}
+.setup-progress span:first-child{background:var(--forest)}
+.logo-upload{display:flex!important;gap:13px;align-items:center;position:relative;cursor:pointer;padding:1px 0 10px;margin-bottom:15px!important}
+.logo-upload .logo-tile{width:58px;height:58px;border:1px dashed #b8c4ad;border-radius:15px;background:#f5f7f2;display:grid;place-items:center;flex:none;overflow:hidden}
+.logo-upload img{width:100%;height:100%;object-fit:contain}
+.logo-upload strong{display:block;font-size:13px;font-weight:600}
+.logo-upload small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:4px}
+.logo-upload input[type=file]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.logo-upload:focus-within{outline:3px solid var(--forest);outline-offset:3px;border-radius:12px}
+.document-party{display:flex;gap:10px;align-items:center;border:1px solid var(--border);border-radius:13px;padding:12px;margin:10px 0;background:#fff}
+.document-party>div{min-width:0;flex:1}.document-party strong{display:block;font-size:13px;overflow-wrap:anywhere}
+.document-party small{display:block;color:var(--muted);font-size:11px;overflow-wrap:anywhere;margin-top:3px}
+.document-party .party-label{font-size:10px;letter-spacing:.06em;font-weight:650;text-transform:uppercase;margin:0 0 5px}
+.document-party>span:last-child{font-size:20px}
+.local-status{font-size:11px;color:var(--muted);line-height:1.5;margin:14px 0;display:flex;gap:7px;align-items:flex-start}
+.local-status .m-icon{width:15px;height:15px;margin-top:1px}
+.phone-app[data-screen=setup] .m-title{max-width:250px;font-size:25px;margin-top:4px}
+.phone-app[data-screen=setup] .m-subtitle{margin-bottom:18px}
+.phone-app[data-screen=editor] .m-section-head:first-of-type{margin-top:12px}
+.device:has(.phone-app[data-screen=setup]) .app-brand-strip{display:none}
+.phone-app[data-screen=home]>.m-title{font-size:28px;line-height:1.15}
+.phone-app .error:not(:empty){padding:12px;border:1px solid #c78b69;background:#fff5ed;border-radius:10px;margin:12px 0;line-height:1.5}
+#mobile-dialog{max-height:85dvh;overflow-y:auto;width:min(410px,calc(100% - 28px));padding:20px;border:1px solid var(--border);border-radius:22px;color:var(--forest)}
+#mobile-dialog::backdrop{background:#16330066;backdrop-filter:blur(3px)}
+#mobile-dialog label{font-size:12px}#mobile-dialog input,#mobile-dialog select,#mobile-dialog textarea{font-size:16px}
+.large-text .phone-app .m-subtitle,.large-text .phone-app label,.large-text .phone-app .list-row small{font-size:14px}
+@media(max-width:590px){.phone-app .m-title{font-size:27px}.phone-app label input,.phone-app label select{font-size:16px}.phone-app .m-welcome{margin-left:-20px;margin-right:-20px}.studio-caption{flex-wrap:wrap;line-height:1.6;text-align:center}}
+@media(max-width:340px){.phone-app{padding-left:14px;padding-right:14px}.phone-app .m-title{font-size:24px}.phone-app .m-grid2{grid-template-columns:1fr}.phone-app .m-welcome{margin-left:-14px;margin-right:-14px}.phone-app .row-end strong{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.phone-app *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

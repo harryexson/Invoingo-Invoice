@@ -44,7 +44,7 @@ Choose a Responses API model available to your OpenAI account, add the key serve
 
 Stripe's existing signature verification and session/currency/amount matching remain authoritative. Verified payment events import one payment, cancel unsent drafts and generate a deduplicated notification. Duplicate provider events do not double count. Browser polling imports verified payment/reversal facts into the app. Signed refund or dispute events place collection holds; a verified full refund reverses the matching payment. Partial refunds/disputes require operator reconciliation and remain held rather than being chased automatically.
 
-Sending rechecks current provider status, recipient, balance, currency, due date and payment-link fingerprint. Paid/void/draft/held invoices cannot be chased. Resend accepts the reviewed plain-text reminder using a stable idempotency key. The log distinguishes accepted, delivered, opened, failed and paid. Open events are approximate; no claim that a person read a message is made. A retry whose outcome remains uncertain beyond the provider deduplication window is blocked for review. Provider setup is required: public HTTPS and a verified `RESEND_FROM` on receitra.com. No actual customer email was sent during testing.
+Sending rechecks current provider status, recipient, balance, currency, due date and payment-link fingerprint. Paid/void/draft/held invoices cannot be chased. Resend accepts the reviewed plain-text reminder using a stable idempotency key. The log distinguishes accepted, delivered, opened, failed and paid. Open events are approximate; no claim that a person read a message is made. A retry whose outcome remains uncertain beyond the provider deduplication window is blocked for review. Provider setup is required: public HTTPS and a verified `RESEND_FROM` on invoingo.com. No actual customer email was sent during testing.
 
 ## Permissions and audit
 
@@ -60,7 +60,7 @@ Validation: 42 automated tests passed; application syntax checks passed; Expo li
 
 1. Integrate a real Invoingo account/session service, server-resolved tenant memberships and role management; replace the operator identity adapter. Complete browser authentication E2E with real permitted users.
 2. Establish one authoritative server invoice service and multi-device editing policy. The current browser-to-server mirror is a compatibility bridge, not full cloud sync.
-3. Verify receitra.com in Resend, configure public HTTPS and webhook URLs, then verify accepted/delivered/failure events and a real test payment end to end. Live Stripe payments remain disabled by the existing gateway.
+3. Verify invoingo.com in Resend, configure public HTTPS and webhook URLs, then verify accepted/delivered/failure events and a real test payment end to end. Live Stripe payments remain disabled by the existing gateway.
 4. Add and verify OpenAI credentials/model, spend limits, consent/retention policy, and production language evals. The built-in parser intentionally handles a bounded set of invoice questions.
 5. Operate a job scheduler, queues, backoff, distributed locks and monitoring before unattended collections. Current collection rules create drafts only and run on demand.
 6. Finish provider refund/partial-refund/dispute reconciliation UI and expired checkout renewal. Held collection records currently require operator review.

@@ -1,5 +1,8 @@
 import { useRef, useState } from 'react';
 import { ActivityIndicator, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import * as Print from 'expo-print';
+import * as Sharing from 'expo-sharing';
+import * as MailComposer from 'expo-mail-composer';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { WebView } from 'react-native-webview';
@@ -11,12 +14,12 @@ export default function App() {
   const [source, setSource] = useState<string | null>(null);
   const [message, setMessage] = useState('');
   const [back, setBack] = useState(false);
-  function openPreview(landing = false) {
+  function openPreview(landing = false, demo = false) {
     try {
       const url = new URL(base.trim());
       if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) throw new Error('Enter the preview server’s HTTP or HTTPS address.');
       if (['localhost', '127.0.0.1', '0.0.0.0'].includes(url.hostname)) throw new Error('Use the computer’s Wi-Fi address. Localhost on your phone points to the phone itself.');
-      setSource(landing ? url.origin + '/' : `${url.origin}/mobile.html?embedded=1&platform=${Platform.OS === 'android' ? 'android' : 'ios'}#welcome`);
+      setSource(landing ? url.origin + '/' : `${url.origin}/mobile.html?embedded=1&mode=${demo ? 'demo' : 'live'}&platform=${Platform.OS === 'android' ? 'android' : 'ios'}#welcome`);
       setMessage('');
     } catch (error) { setMessage(error instanceof Error ? error.message : 'Check the preview address.'); }
   }
@@ -28,11 +31,27 @@ export default function App() {
           try {
             if (new URL(event.nativeEvent.url).origin !== new URL(source).origin) return;
             const request = JSON.parse(event.nativeEvent.data);
+            if (request.type === 'invoingo.document') {
+              if (!['share', 'mail', 'sms', 'whatsapp', 'pdf'].includes(request.action) || typeof request.html !== 'string' || request.html.length > 500000 || typeof request.text !== 'string' || request.text.length > 50000 || typeof request.title !== 'string') throw new Error('Invalid document share request.');
+              if (request.action === 'sms') {
+                await Linking.openURL(`sms:?body=${encodeURIComponent(request.text)}`);
+                return;
+              }
+              const file = await Print.printToFileAsync({ html: request.html });
+              if (request.action === 'mail' && await MailComposer.isAvailableAsync()) {
+                const recipients = request.demo ? [] : (Array.isArray(request.recipients) ? request.recipients.filter((email: unknown): email is string => typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)).slice(0, 1) : []);
+                await MailComposer.composeAsync({ subject: request.title.slice(0, 200), body: request.text, recipients, attachments: [file.uri] });
+              } else {
+                if (!await Sharing.isAvailableAsync()) throw new Error('Document sharing is unavailable on this device.');
+                await Sharing.shareAsync(file.uri, { mimeType: 'application/pdf', UTI: 'com.adobe.pdf', dialogTitle: request.action === 'whatsapp' ? 'Choose WhatsApp or another app' : request.title.slice(0, 200) });
+              }
+              return;
+            }
             if (request.type !== 'invoingo.subscription') return;
             const billing = await subscriptionAction(request.action, request.plan, request.period);
             const result = JSON.stringify({ type: 'invoingo.subscription.result', ...billing });
             web.current?.injectJavaScript(`window.dispatchEvent(new MessageEvent('message',{data:${JSON.stringify(result)}}));true;`);
-          } catch { setMessage('Subscription request could not be opened.'); }
+          } catch (error) { setMessage(error instanceof Error ? error.message : 'This action could not be opened.'); }
         }}
         onNavigationStateChange={state => setBack(state.canGoBack)}
         onShouldStartLoadWithRequest={request => {
@@ -44,10 +63,10 @@ export default function App() {
         renderError={() => <View style={styles.error}><Text style={styles.subheading}>Let’s reconnect.</Text><Text style={styles.copy}>Keep your computer’s preview server running and connect your phone to the same Wi-Fi. Check the address in the preview menu.</Text><Pressable accessibilityRole="button" style={styles.action} onPress={() => setSource(null)}><Text style={styles.actionText}>Change preview address</Text></Pressable></View>} />
       {message ? <Text style={styles.errorMessage}>{message}</Text> : null}
     </> : <ScrollView contentContainerStyle={styles.setup} keyboardShouldPersistTaps="handled">
-      <Image source={require("./assets/invoingo-wordmark.png")} style={styles.brand} resizeMode="contain" accessibilityLabel="Invoingo" /><Text style={styles.eyebrow}>THE EXPO GO PREVIEW</Text><Text style={styles.heading}>{'GOOD WORK.\nON THE GO.'}</Text><Text style={styles.copy}>Explore every connected screen, including MioBot on your own phone. The demo uses fictional data and saves changes in this device’s preview.</Text>
+      <Image source={require("./assets/invoingo-wordmark.png")} style={styles.brand} resizeMode="contain" accessibilityLabel="Invoingo" /><Text style={styles.eyebrow}>THE EXPO GO PREVIEW</Text><Text style={styles.heading}>{'GOOD WORK.\nON THE GO.'}</Text><Text style={styles.copy}>Explore every connected screen, including MioBot on your own phone. Open your own workspace, or choose the separate sample business below. Records are saved on this device.</Text>
       <Text style={styles.label}>Computer’s preview address</Text><TextInput accessibilityLabel="Preview server address" style={styles.input} value={base} onChangeText={setBase} autoCapitalize="none" autoCorrect={false} keyboardType="url" placeholder="http://192.168.1.10:4185" placeholderTextColor="#687160" />
       {message ? <Text accessibilityRole="alert" style={styles.errorMessage}>{message}</Text> : null}
-      <Pressable accessibilityRole="button" style={styles.action} onPress={() => openPreview()}><Text style={styles.actionText}>Explore the mobile app ↗</Text></Pressable><Pressable accessibilityRole="button" style={styles.secondary} onPress={() => openPreview(true)}><Text style={styles.toolText}>View the landing page ↗</Text></Pressable>
+      <Pressable accessibilityRole="button" style={styles.action} onPress={() => openPreview()}><Text style={styles.actionText}>Open my workspace ↗</Text></Pressable><Pressable accessibilityRole="button" style={styles.secondary} onPress={() => openPreview(false, true)}><Text style={styles.toolText}>Explore sample business ↗</Text></Pressable><Pressable accessibilityRole="button" style={styles.secondary} onPress={() => openPreview(true)}><Text style={styles.toolText}>View the landing page ↗</Text></Pressable>
       <Text style={styles.note}>Keep the preview server running on your computer. Connect both devices to the same Wi-Fi. This is an Expo preview of the working web app; App Store and Play Store builds are still in development.</Text>
     </ScrollView>}
   </SafeAreaView></SafeAreaProvider>;
