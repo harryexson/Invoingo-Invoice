@@ -11,3 +11,5 @@ artifacts
 supabase
 dist
 *.log
+.agents
+skills-lock.json
