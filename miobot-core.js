@@ -13,14 +13,14 @@
   if(!B.validDate(today))throw Error('A valid business date is required.');
   text=String(text||'').trim();if(!text||text.length>2000)throw Error('Ask a question of up to 2,000 characters.');
   if(A.isRequest(text))return A.propose(db,text,today);
-  const q=text.toLowerCase().replace(/[’]/g,"'"),all=facts(db,today),previous=all.filter(r=>(context.ids||[]).includes(r.id));
+  const q=text.toLowerCase().replace(/[’]/g,"'").replace(/follow[- ]ups?/g,'follow up'),all=facts(db,today),previous=all.filter(r=>(context.ids||[]).includes(r.id));
   let rows=all.filter(r=>!['Draft','Void'].includes(r.status)),title='Invoices',reply='',intent='list';
   const number=q.match(/(?:#|inv[- ]?|invoice\s*#?)(\d+)/),client=db.clients.find(c=>c.name&&q.includes(c.name.toLowerCase()));
   const refer=/\b(them|they|those|these|ones|first|that|one owes|only|their)\b/.test(q);
   if(refer&&previous.length)rows=previous;
   if(number)rows=rows.filter(r=>r.number===Number(number[1]));else if(client)rows=rows.filter(r=>r.clientId===client.id);
   if(/\b(?:draft|prepare|write|create)\b.*\b(?:update|status email)\b/.test(q))return {intent:'draft',kind:'update',ids:rows.map(r=>r.id),text:'I prepared customer status-update drafts. Review the recipient and message before sending.',cards:[],context:{ids:rows.map(r=>r.id)}};
-  if(/\b(send it|send them|send reminder|send the reminder)\b/.test(q))return {intent:'review',title:'Review before sending',text:'Open the reminder draft, check the recipient and message, then tap Send. I never send a generated message without approval.',cards:[],context};
+  if(/^(?:please )?(?:send it|send them|send (?:the )?reminders?)[.!?]*$/.test(q))return {intent:'review',title:'Review before sending',text:'Open the reminder draft, check the recipient and message, then tap Send. I never send a generated message without approval.',cards:[],context};
   if(/friendlier|firmer|shorten|make it (friendly|firm|short)/.test(q))return {intent:'tone',tone:/firm/.test(q)?'firm':/short/.test(q)?'short':'friendly',text:'I can update your selected reminder. Review the revised message before sending.',cards:[],context};
   if(/remind me when|notify me when|when they pay/.test(q))return {intent:'watch',ids:rows.filter(r=>r.balance>0).map(r=>r.id),text:'Payment updates will appear in MioBot after a verified provider event or a recorded payment.',cards:rows.slice(0,20),context:{ids:rows.map(r=>r.id)}};
   if(/last reminder|previous reminder/.test(q)){title='Reminder history';reply=rows.some(r=>r.lastReminder)?'Here is the latest accepted reminder for each invoice.':'No accepted reminders are recorded for these invoices.';}
@@ -30,13 +30,13 @@
   else if(/\bpaid\b/.test(q)&&!/unpaid|hasn't paid|haven't paid|has not paid|not (?:yet )?paid/.test(q)){if(!number)rows=rows.filter(r=>r.status==='Paid');title=number?'Invoice payment status':'Paid invoices';}
   else if(/due today/.test(q)){rows=rows.filter(r=>r.balance>0&&r.due===today);title='Due today';}
   else if(/due (this|next) week|due soon|due next/.test(q)){rows=rows.filter(r=>r.balance>0&&r.due>=today&&r.due<=addDays(today,6));title='Due in the next seven days';}
-  else if(/late|overdue|attention|follow up|ignored/.test(q)){rows=rows.filter(r=>r.balance>0&&r.daysOverdue>0);title='Overdue invoices';if(/ignored/.test(q)){rows=rows.filter(r=>r.lastReminder);reply='These invoices remain unpaid after a recorded reminder. This does not prove the customer ignored it.';}}
+  else if(/late|overdue|attention|ignored/.test(q)||(/follow up/.test(q)&&!/unpaid|open|outstanding/.test(q))){rows=rows.filter(r=>r.balance>0&&r.daysOverdue>0);title='Overdue invoices';if(/ignored/.test(q)){rows=rows.filter(r=>r.lastReminder);reply='These invoices remain unpaid after a recorded reminder. This does not prove the customer ignored it.';}}
   else if(/owes|owe |open|unpaid|hasn't paid|haven't paid|has not paid|not (?:yet )?paid|outstanding/.test(q)){rows=rows.filter(r=>r.balance>0);title='Open invoices';}
   const days=q.match(/(?:more than|over|older than)\s*(\d+)\s*days/);if(days)rows=rows.filter(r=>r.balance>0&&r.daysOverdue>Number(days[1]));
   const value=q.match(/(?:over|above|more than)\s*\$\s*([\d,]+(?:\.\d{1,2})?)/);if(value)rows=rows.filter(r=>r.balance>Number(value[1].replaceAll(',','')));
   if(/owes the most|largest|highest|biggest/.test(q)){const currencies=new Set(rows.map(r=>r.currency));if(currencies.size>1)return {intent:'list',title:'Choose a currency',text:'Balances in different currencies cannot be ranked without an exchange rate.',cards:rows.slice(0,20),context:{ids:rows.map(r=>r.id)}};rows=rows.sort((a,b)=>b.balance-a.balance).slice(0,1);}
   const first=q.match(/first\s+(three|two|one|\d+)/);if(first)rows=rows.slice(0,({three:3,two:2,one:1}[first[1]]||Math.min(10,Number(first[1]))));
-  if(/draft|write.*reminder|remind (?!me)|follow-ups/.test(q)){intent='draft';rows=rows.filter(r=>r.balance>0);title='Review payment reminders';reply='I prepared reminder drafts from current invoice records. Nothing has been sent.';}
+  if(/draft|write.*reminder|remind (?!me)|follow up|(?:send|sent|prepare).*reminder/.test(q)){intent='draft';rows=rows.filter(r=>r.balance>0&&!r.collectionHold);title='Review payment reminders';reply='I prepared reminder drafts from current invoice records. Nothing has been sent.';}
   const recognized=number||client||refer||/paid|late|overdue|due |owe|open|outstanding|attention|reminder|follow|largest|highest|biggest|partial/.test(q)||value;
   if(!recognized)return {intent:'help',title:'Ask about your invoices',text:'Try “Who’s late?”, “What’s due this week?”, “How much is outstanding?” or “Draft a reminder for invoice #1042.” I cannot verify facts outside your invoice records.',cards:[],context};
   if(!reply)reply=rows.length?`${rows.length} ${title.toLowerCase()} · ${amounts(grouped(rows,title==='Paid invoices'?'paid':'balance'))}.`:'You’re all caught up. No invoices match this question.';

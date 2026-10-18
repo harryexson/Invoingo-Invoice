@@ -20,3 +20,13 @@
 @media(prefers-reduced-motion:reduce){.mio-scroll{scroll-behavior:auto}}
 .mio-setting{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 0;border-bottom:1px solid #e5eadf;margin:0;font-size:14px}.mio-setting>span{flex:1}.mio-setting strong,.mio-setting small{display:block}.mio-setting small{font-size:12px;color:#64745a;margin-top:3px}.mio-setting input{width:22px;height:22px;min-height:22px;accent-color:#163300;flex:0 0 auto}.mio-voice-card{max-width:600px;background:#f3f6ef;border:1px solid #dfe6d8;border-radius:16px;padding:20px;margin-top:20px}.mio-voice-card>[data-mio=listen]{width:100%;min-height:48px}.mio-voice-card>p{font-size:13px;color:#5f6f53;margin:12px 0}.mio-voice-card label{display:block;font-size:13px;margin:16px 0}.mio-voice-card input{display:block;width:100%;margin-top:7px;padding:12px;border:1px solid #cbd6c0;border-radius:10px;background:white;font:16px Inter,Arial,sans-serif;color:#163300}.mio-voice-card button:disabled{opacity:.65;cursor:not-allowed}.phone-app .mio-header{padding:14px 10px 10px;gap:6px}.phone-app .mio-header>button{width:31px;height:32px;font-size:16px;flex:0 0 31px}.phone-app .mio-header>button[data-mio=voice]{width:auto;flex:0 0 auto;padding:0 8px;font-size:11px}.phone-app .mio-controls nav{flex-wrap:wrap}
 .mio-inline-link{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px;color:#163300}
+.mio-composer .mio-microphone{display:grid;place-items:center;background:#e2f6d5;color:#163300;border:1px solid #c6d8b9;width:44px;height:46px;min-width:44px;padding:0}
+.mio-microphone.is-listening{background:#163300!important;color:#9fe870!important;box-shadow:0 0 0 3px #9fe87066}
+.mio-voice-status{margin:0;padding:4px 14px 7px;font-size:11px;line-height:1.45;color:#566b48;flex-shrink:0;background:white}
+.mio-voice-card>.mio-microphone{display:grid;place-items:center;width:64px;height:64px;margin:0 auto;background:#9fe870;color:#163300;border:0}
+.mio-voice-card>.mio-microphone svg{width:28px;height:28px}
+.phone-app .mio-composer{gap:6px;padding:9px 10px 4px}
+.phone-app .mio-composer input{padding:11px 12px;width:0}
+.phone-app .mio-composer button{flex:0 0 42px;width:42px;height:44px;min-height:44px}
+.phone-app .mio-voice-status{font-size:10px;padding:4px 12px 6px}
+.mio-shell button:disabled{opacity:.55;cursor:wait}

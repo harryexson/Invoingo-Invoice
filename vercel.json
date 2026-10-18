@@ -4,9 +4,28 @@
   "buildCommand": "npm run build:web",
   "outputDirectory": "dist/web",
   "headers": [
-    {"source": "/(.*)", "headers": [
-      {"key": "X-Content-Type-Options", "value": "nosniff"},
-      {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}
-    ]}
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/landing/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
+      "source": "/app/landing/assets/:path*",
+      "destination": "/assets/:path*"
+    }
   ]
 }

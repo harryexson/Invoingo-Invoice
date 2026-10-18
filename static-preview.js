@@ -1,5 +1,6 @@
 /* Static hosting supports real device-local work, not provider operations. */
 (()=>{
+ window.InvoingoStaticPreview=true;
  const original=window.fetch.bind(window);
  window.fetch=async(input,init)=>{
   const u=new URL(typeof input==='string'?input:input.url,location.href);
